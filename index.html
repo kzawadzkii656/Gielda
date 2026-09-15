@@ -55,15 +55,49 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 .reportChart{height:135px}.reportChart svg{width:100%;height:100%}.reportBar{display:grid;grid-template-columns:90px 1fr 65px;gap:6px;align-items:center;padding:5px 0;font-size:9px}.reportBarTrack{height:6px;background:#edf0ee;border-radius:99px;overflow:hidden}.reportBarTrack i{display:block;height:100%;background:var(--g);border-radius:99px}
 .reportProduct{display:grid;grid-template-columns:1fr auto auto;gap:8px;border-top:1px solid #eef1ef;padding:7px 0;font-size:9px}.reportBtns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.reportBtns button{padding:9px}
 @media print{nav,.top .iconbtn,.reportBtns,.card:not(:first-of-type){display:none!important}.app{max-width:none;padding:0}.page{display:none!important}#more{display:block!important}body{background:#fff}}
+
+.productGroup{margin:10px 0 4px;padding:0 4px;font-size:9px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.product{min-height:62px;touch-action:pan-y}.product.boughtRow{opacity:.62}.lastPrice{font-size:8px;color:var(--mut);margin-top:3px}.lastPrice .up{color:var(--red)}.lastPrice .down{color:var(--g)}
+.budgetEstimate{font-size:9px;font-weight:700;margin-top:5px}.shoppingHint{font-size:8px;color:var(--mut);text-align:center;margin:6px 0}
+.sheet .field{font-size:16px}.sheetfoot .save{min-height:48px;font-size:13px}.status3 button{min-height:42px}.budgetCard{margin-top:9px}
+.undoToast{display:none;position:fixed;left:50%;bottom:78px;transform:translateX(-50%);z-index:90;background:#1d2520;color:white;border-radius:12px;padding:10px 12px;font-size:10px;box-shadow:0 8px 30px #0003;align-items:center;gap:12px}.undoToast.show{display:flex}.undoToast button{border:0;background:none;color:#8de2b2;font-weight:800}
+
+.priceAssist{margin-top:8px}.priceChips{display:flex;gap:5px;overflow:auto;padding-bottom:2px}.priceChip{border:1px solid #dce8df;background:#f7faf8;border-radius:9px;padding:7px 8px;white-space:nowrap;font-size:9px}.priceChip b{display:block;color:var(--g);font-size:10px}
+.dueSuggestions{display:none;margin:8px 0}.dueSuggestions.show{display:block}.dueBox{border:1px solid #dce8df;background:#f5faf7;border-radius:12px;padding:9px}.dueHead{display:flex;justify-content:space-between;align-items:center;font-size:10px}.dueItems{display:flex;gap:5px;overflow:auto;margin-top:7px}.dueItem{border:1px solid #dce8df;background:white;border-radius:99px;padding:7px 9px;white-space:nowrap;font-size:9px;color:var(--ink)}
+.orderRow{display:grid;grid-template-columns:1fr auto auto;gap:5px;align-items:center;padding:7px 0;border-top:1px solid #eef1ef;font-size:10px}.orderRow:first-child{margin-top:7px}.orderBtn{width:30px;height:30px;border:1px solid var(--line);background:#fff;border-radius:8px;font-size:14px}
+
+.favOnlyBtn{border:1px solid var(--line);background:#fff;border-radius:99px;padding:7px 10px;font-size:9px;margin:0 0 8px}.favOnlyBtn.on{background:#eaf7ef;border-color:#b9dfc8;color:var(--g);font-weight:800}
+.qtyLine{display:grid;grid-template-columns:42px 1fr 42px;gap:6px}.stepBtn{border:1px solid var(--line);background:#f7f9f7;border-radius:9px;font-size:20px;color:var(--g);font-weight:700}
+.dataSafety{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}.dataSafety div span{display:block;font-size:8px;color:var(--mut)}.dataSafety div b{font-size:10px}
+
+.shoppingProgress{margin:7px 0 9px}.progressTop{display:flex;justify-content:space-between;align-items:center;font-size:9px}.progressTop b{font-size:10px}.progressTrack{height:6px;background:#e9eeeb;border-radius:99px;overflow:hidden;margin-top:5px}.progressTrack i{display:block;height:100%;background:var(--g);border-radius:99px;transition:width .2s}
+.storageStats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:9px}.storageStat{background:#f5f7f5;border-radius:8px;padding:7px 4px;text-align:center;font-size:8px;color:var(--mut)}.storageStat b{display:block;color:var(--ink);font-size:11px;margin-top:2px}.restoreLocal{width:100%;margin-top:8px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px;font-size:9px}
+
+.todayTools{display:flex;gap:6px;margin:7px 0}.todayTools select{margin-left:auto;max-width:145px}.compact .product{min-height:48px;padding-top:6px;padding-bottom:6px}.compact .product .pic{width:34px;height:34px}.compact .lastPrice{display:none}.compact .productGroup{margin-top:6px}
+.settingRow{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #eef1ef;padding:10px 0;font-size:10px}.settingRow:first-of-type{margin-top:7px}.settingRow input{width:20px;height:20px;accent-color:var(--g)}
+
+.batchActions{display:flex;gap:6px;overflow:auto;margin:-2px 0 7px}.batchActions button{white-space:nowrap}
+.insights{display:grid;gap:6px}.insight{border:1px solid #e3e9e5;background:#f8faf8;border-radius:9px;padding:8px;font-size:9px}.insight b{display:block;font-size:10px;margin-bottom:2px}.importLabel{display:block;text-align:center;box-sizing:border-box}
+
+.quickListCard{border:1px solid #e3e9e5;background:#fff;border-radius:12px;padding:8px;margin:7px 0}.quickListHead{display:flex;justify-content:space-between;align-items:center;font-size:10px}.quickListButtons{display:flex;gap:6px;overflow:auto;margin-top:7px}.quickListBtn{border:1px solid #dce8df;background:#f5faf7;border-radius:9px;padding:8px 10px;white-space:nowrap;text-align:left;font-size:9px}.quickListBtn b{display:block;color:var(--g);font-size:10px}.monthRow{display:grid;grid-template-columns:1fr auto auto;gap:8px;padding:7px 0;border-top:1px solid #eef1ef;font-size:9px}.monthRow b:last-child{min-width:68px;text-align:right}
+
+.emptyState{display:none;text-align:center;color:var(--mut);font-size:10px;padding:24px 8px}.emptyState.show{display:block}
+.weekSnapshot{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:8px}.weekBox{background:#f5f7f5;border-radius:9px;padding:9px;font-size:8px;color:var(--mut)}.weekBox b{display:block;color:var(--ink);font-size:13px;margin-top:2px}
+.favoriteQuick{display:flex;gap:5px;overflow:auto;margin-top:6px}.favoriteQuick button{border:1px solid #e4e9e5;background:#fff;border-radius:99px;padding:6px 8px;white-space:nowrap;font-size:8px}.favoriteQuick button b{color:var(--g)}
+
+.todayStats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:0 0 8px}.todayStat{background:#f5f7f5;border-radius:8px;padding:7px;text-align:center;font-size:8px;color:var(--mut)}.todayStat b{display:block;color:var(--ink);font-size:11px;margin-top:2px}
+.lastPriceBtn{display:none;width:100%;border:1px solid #cfe3d6;background:#f4faf6;color:var(--g);border-radius:9px;padding:8px;margin-top:6px;font-size:9px;font-weight:700}.lastPriceBtn.show{display:block}
+.appHealth{display:grid;gap:6px;margin-top:8px}.healthRow{display:flex;justify-content:space-between;align-items:center;font-size:9px;border-top:1px solid #eef1ef;padding-top:6px}.healthOk{color:var(--g);font-weight:800}
 </style>
 </head><body><main class="app">
 <section id="today" class="page active">
-<div class="top"><span class="ico" data-icon="bag"></span><span class="grow">Giełda • Zakupy <small style="font-size:8px;color:#8a938d">V7.0</small></span><button class="iconbtn">⚙</button></div>
+<div class="top"><span class="ico" data-icon="bag"></span><span class="grow">Giełda • Zakupy <small style="font-size:8px;color:#8a938d">V7.9</small></span><button class="iconbtn" onclick="go('more')" aria-label="Więcej"><span data-icon="more"></span></button></div>
 <div class="date"><button onclick="shift(-1)">‹</button><input id="date" type="date"><button onclick="shift(1)">›</button></div>
-<div id="status" class="seg"></div><div class="searchrow"><input id="qToday" class="search" placeholder="⌕  Szukaj produktu..." oninput="renderToday()"><button class="filter">☷</button></div>
-<div id="todayList"></div><div class="card budgetCard">
+<div id="status" class="seg"></div><div class="searchrow"><input id="qToday" class="search" placeholder="Szukaj produktu..." oninput="renderToday()"><button class="filter" aria-label="Szukaj"><span data-icon="search"></span></button></div>
+<div class="todayTools"><button id="compactBtn" class="miniBtn" onclick="toggleCompact()">Tryb kompaktowy</button><select id="sortToday" class="miniBtn" onchange="todaySort=this.value;renderToday()"><option value="route">Kolejność giełdy</option><option value="name">A–Z</option><option value="price">Najdroższe</option></select></div><div class="quickListCard"><div class="quickListHead"><b>Szybka lista</b><span class="sub">1 dotknięcie</span></div><div id="quickListButtons" class="quickListButtons"></div><div id="favoriteQuick" class="favoriteQuick"></div></div>
+<div id="batchActions" class="batchActions"><button class="miniBtn" onclick="markAllTodo()">Wszystkie → do kupienia</button><button class="miniBtn" onclick="clearBought()">Usuń kupione z widoku</button></div><div id="shoppingProgress" class="shoppingProgress"></div><div id="todayStats" class="todayStats"></div><div id="dueSuggestions" class="dueSuggestions"></div><div id="todayList"></div><div id="todayEmpty" class="emptyState"></div><div class="card budgetCard">
 <div class="budgetTop"><div><div class="sub">Budżet listy</div><b id="budgetSpent">0,00 zł</b> <span class="sub">z</span> <button class="budgetEdit" onclick="setBudget()"><span id="budgetLimit">ustaw budżet</span></button></div><b id="budgetLeft"></b></div>
-<div class="budgetBar"><i id="budgetFill"></i></div><div id="budgetInfo" class="sub" style="margin-top:5px"></div></div><div class="summary"><div id="summary" class="summarygrid"></div><button class="primary" onclick="openAdd()">+ &nbsp; Dodaj produkt</button>
+<div class="budgetBar"><i id="budgetFill"></i></div><div id="budgetInfo" class="sub" style="margin-top:5px"></div><div id="budgetEstimate" class="budgetEstimate"></div></div><div class="summary"><div id="summary" class="summarygrid"></div><button class="primary" onclick="openAdd()">+ &nbsp; Dodaj produkt</button>
 <button class="primary" style="background:#fff;color:var(--g);border:1px solid var(--g)" onclick="finishShopping()">Zakończ zakupy</button></div>
 </section>
 
@@ -83,7 +117,7 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 
 <section id="products" class="page">
 <div class="top"><span class="ico" data-icon="bag"></span><span class="grow">Produkty</span><button class="plus" onclick="openProduct()">+</button></div>
-<div class="searchrow"><input id="qProd" class="search" placeholder="⌕  Szukaj produktu..." oninput="renderProducts()"><button class="filter">☷</button></div>
+<div class="searchrow"><input id="qProd" class="search" placeholder="Szukaj produktu..." oninput="renderProducts()"><button class="filter" aria-label="Szukaj"><span data-icon="search"></span></button></div>
 <div id="cats" class="cats"></div>
 <div class="card" style="padding:8px 10px">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
@@ -97,7 +131,7 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 
 <section id="history" class="page">
 <div class="top"><span class="ico" data-icon="chart"></span><span class="grow">Historia i analizy</span></div>
-<div class="historyhead"><div id="histPic" class="pic">🍅</div><select id="histProd" onchange="renderHistory()"></select></div>
+<div class="historyhead"><div id="histPic" class="pic">PR</div><select id="histProd" onchange="renderHistory()"></select></div>
 <div class="seg"><button class="on">Ceny</button><button>Zakupy</button><button>Statystyki</button></div>
 <div id="histPeriods" class="periods"><button data-days="7" onclick="setHistDays(7)">7 dni</button><button data-days="30" class="on" onclick="setHistDays(30)">30 dni</button><button data-days="90" onclick="setHistDays(90)">3 miesiące</button><button data-days="365" onclick="setHistDays(365)">Rok</button></div>
 <div id="priceCompare" class="card" style="display:grid;grid-template-columns:1fr auto;align-items:center;margin-top:8px">
@@ -114,19 +148,22 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 <div class="charttitle">Wydatki w czasie</div><div id="reportChart" class="reportChart"></div>
 <div class="charttitle">Kategorie</div><div id="reportCats"></div>
 <div class="charttitle">Najczęściej kupowane</div><div id="reportProducts"></div>
+<div class="charttitle">Wnioski z zakupów</div><div id="reportInsights" class="insights"></div>
+<div class="charttitle">Miesiące</div><div id="monthlyReport"></div>
 <div class="reportBtns"><button class="miniBtn" onclick="exportCSV()">Eksport CSV</button><button class="miniBtn" onclick="printReport()">Drukuj / PDF</button></div>
 </div>
 <div class="card"><div style="display:flex;align-items:center;justify-content:space-between"><b>Jednostki</b><button class="iconbtn" style="width:auto;padding:0 10px;border-radius:9px;font-size:11px" onclick="addUnit()">+ Dodaj</button></div><div id="unitManager"></div></div>
 <div class="card"><b>Kopia bezpieczeństwa</b><p class="sub">Dane są zapisywane lokalnie na tym urządzeniu.</p><button class="primary" onclick="exportData()">Eksport JSON</button><input id="importer" type="file" hidden accept=".json" onchange="importData(this)"><button class="primary" style="background:#fff;color:var(--g);border:1px solid var(--g)" onclick="importer.click()">Import JSON</button></div></section>
-</main>
+</main><div id="undoToast" class="undoToast"><span id="undoText">Zmieniono status</span><button onclick="undoLast()">Cofnij</button></div>
 
 <nav><div class="navin"><button class="nav on" data-go="today"><span data-icon="bag"></span>Dzisiaj</button><button class="nav" data-go="lists"><span data-icon="cal"></span>Listy</button><button class="nav" data-go="products"><span data-icon="box"></span>Produkty</button><button class="nav" data-go="history"><span data-icon="chart"></span>Historia</button><button class="nav" data-go="more"><span data-icon="more"></span>Więcej</button></div></nav>
 
-<div id="editSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2 id="editName">Produkt</h2><button class="close" onclick="closeSheet()">×</button></div><div id="editHero" class="hero">🍅</div><div id="editMeta" class="sub"></div>
+<div id="editSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2 id="editName">Produkt</h2><button class="close" onclick="closeSheet()">×</button></div><div id="editHero" class="hero">PR</div><div id="editMeta" class="sub"></div>
 <div class="twotabs"><button class="on">Szybki wpis</button><button>Szczegóły</button></div><div class="label">Status</div><div class="status3"><button onclick="setState('todo')">Do kupienia</button><button class="buy" onclick="setState('bought')">✓ Kupione</button><button class="no" onclick="setState('missed')">Nie kupiono</button></div>
-<div class="two"><div><div class="label">Ilość / waga</div><input id="qty" class="field" type="number" step=".01" inputmode="decimal" oninput="calc()"></div><div><div class="label">Kwota za całość</div><input id="amount" class="field" type="number" step=".01" inputmode="decimal" oninput="calc()"></div></div>
+<div class="two"><div><div class="label">Ilość / waga</div><div class="qtyLine"><button class="stepBtn" onclick="stepQty(-1)">−</button><input id="qty" class="field" type="number" inputmode="decimal" step=".01" oninput="calc()"><button class="stepBtn" onclick="stepQty(1)">+</button></div></div><div><div class="label">Kwota za całość</div><input id="amount" class="field" type="number" inputmode="decimal" step=".01" oninput="calc()"></div></div>
 <div class="calc"><span>Cena za kg</span><span id="calc">—</span></div><div id="compare" class="compare"></div><div id="delta" class="delta"></div>
-<div class="sheetfoot"><button class="delete" onclick="removeItem()">Usuń</button><button class="save" onclick="saveEdit()">✓ &nbsp; Zapisz</button></div></div></div>
+<div class="priceAssist"><div class="label">Ostatnie ceny</div><div id="recentPrices" class="priceChips"></div></div>
+<div class="sheetfoot"><button class="delete" onclick="removeItem()">Usuń</button><button class="save" onclick="saveBought()">Kupione i zapisz</button></div></div></div>
 
 <div id="addSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2>Dodaj produkt</h2><button class="close" onclick="document.getElementById('addSheet').classList.remove('open')">×</button></div><input id="qAdd" class="search" placeholder="Szukaj..." oninput="renderAdd()">
 <div id="smartSuggestions"></div><div id="addRows"></div></div></div>
@@ -160,7 +197,7 @@ let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){db=null}
 if(!db||typeof db!=='object')db=structuredClone(seed);
 if(!Array.isArray(db.cats))db.cats=Array.isArray(db.categories)?db.categories.slice():seed.cats.slice();
 if(!Array.isArray(db.products))db.products=structuredClone(seed.products);
-if(!db.lists||typeof db.lists!=='object')db.lists={};if(!Array.isArray(db.units))db.units=['kg','szt.','op.','karton','skrzynka','pęczek'];if(!db.budgets||typeof db.budgets!=='object')db.budgets={};if(!Array.isArray(db.templates))db.templates=[];
+if(!db.lists||typeof db.lists!=='object')db.lists={};if(!Array.isArray(db.units))db.units=['kg','szt.','op.','karton','skrzynka','pęczek'];if(!db.budgets||typeof db.budgets!=='object')db.budgets={};if(!Array.isArray(db.templates))db.templates=[];if(!db.prefs||typeof db.prefs!=='object')db.prefs={hideBought:false,vibrate:true,finishConfirm:true};db.prefs={hideBought:false,vibrate:true,finishConfirm:true,...db.prefs};
 db.products=db.products.map((p,i)=>({id:p.id||('p'+i),n:p.n||p.name||'Produkt',c:p.c||p.cat||db.cats[0]||'Pozostałe',u:p.u||p.unit||'szt.',q:p.q??p.qty??'',f:p.f??p.fav??0}));
 let filt='all', cat='all', cur=null, state='bought';
 const $=x=>document.getElementById(x), P=id=>db.products.find(p=>p.id===id), save=()=>localStorage.setItem(KEY,JSON.stringify(db)), money=x=>(+x||0).toLocaleString('pl-PL',{style:'currency',currency:'PLN'});
@@ -169,7 +206,8 @@ if(!Object.keys(db.lists).length){let d=$('date').value;db.lists[d]=['p1','p3','
 document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go)); $('date').onchange=renderAll;
 function go(id){document.querySelectorAll('.page,.nav').forEach(x=>x.classList.remove('active','on'));$(id).classList.add('active');document.querySelector(`[data-go="${id}"]`).classList.add('on');renderAll()}
 function shift(n){let d=new Date($('date').value+'T12:00');d.setDate(d.getDate()+n);$('date').value=d.toLocaleDateString('en-CA');renderAll()}
-function last(pid,before=$('date').value){let a=[];Object.entries(db.lists).forEach(([d,l])=>d<before&&l.forEach(x=>{if(x.pid==pid&&x.state=='bought'&&+x.qty&&+x.amount)a.push({d,r:+x.amount/+x.qty})}));return a.sort((a,b)=>b.d.localeCompare(a.d))[0]}
+function purchaseHistory(pid,before=$('date').value){let a=[];Object.entries(db.lists).forEach(([d,l])=>d<before&&l.forEach(x=>{if(x.pid==pid&&x.state=='bought'&&+x.qty&&+x.amount)a.push({d,r:+x.amount/+x.qty,qty:+x.qty,amount:+x.amount})}));return a.sort((a,b)=>b.d.localeCompare(a.d))}
+function last(pid,before=$('date').value){return purchaseHistory(pid,before)[0]}
 function setBudget(){let d=$('date').value,old=db.budgets[d]||'';let v=prompt('Budżet na tę listę (zł):',old);if(v===null)return;v=String(v).replace(',','.').trim();if(v===''||+v<0){delete db.budgets[d]}else if(!isNaN(+v)){db.budgets[d]=+v}save();renderToday()}
 function renderBudget(){
  let l=L(),spent=l.reduce((s,x)=>s+(x.state==='bought'?+x.amount||0:0),0),limit=+db.budgets[$('date').value]||0,left=limit-spent;
@@ -178,10 +216,32 @@ function renderBudget(){
  $('budgetLeft').className=limit&&left<0?'priceUp':'';
  let pct=limit?Math.min(100,spent/limit*100):0;$('budgetFill').style.width=pct+'%';$('budgetFill').className=limit&&spent>limit?'over':'';
  $('budgetInfo').textContent=limit?`Wykorzystano ${Math.round(spent/limit*100)}% budżetu`:'Ustaw limit wydatków dla tej listy.';
+ let estimate=l.reduce((sum,x)=>{if(x.state==='bought')return sum+(+x.amount||0);if(x.state!=='todo')return sum;let p=P(x.pid),z=last(x.pid),q=+x.qty||+p?.q||0;return sum+(z&&q?z.r*q:0)},0);
+ let pending=l.filter(x=>x.state==='todo').length;$('budgetEstimate').textContent=pending?`Do kupienia: ${pending} · Szacowany koszt całej listy: ${money(estimate)}`:'';
 }
-function renderToday(){let l=L(), q=$('qToday').value.toLowerCase(), C={all:l.length,todo:l.filter(x=>x.state=='todo').length,bought:l.filter(x=>x.state=='bought').length,missed:l.filter(x=>x.state=='missed').length};$('status').innerHTML=[['all','Wszystkie'],['todo','Do kupienia'],['bought','Kupione']].map(([k,t])=>`<button class="${filt==k?'on':''}" onclick="filt='${k}';renderToday()">${t}<span class=badge>${C[k]}</span></button>`).join('');
-$('todayList').innerHTML=l.filter(x=>(filt=='all'||x.state==filt)&&P(x.pid).n.toLowerCase().includes(q)).map(x=>{let p=P(x.pid),r=+x.qty&&+x.amount?+x.amount/+x.qty:0,st=x.state=='missed'?'<span class="pill red">Nie kupiono</span>':x.state=='todo'?'<span class="pill blue">Do kupienia</span>':'';return `<div class=product onclick="openEdit('${x.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${x.qty||p.q||'—'} ${p.u}</div></div><div>${r?`<div class=unitprice>${money(r)}/${p.u}</div><div class=total>${money(x.amount)} / ${x.qty} ${p.u}</div>`:st}</div><div class="check ${x.state=='bought'?'y':''}">${x.state=='bought'?'✓':''}</div></div>`}).join('');
-let b=l.filter(x=>x.state=='bought'),m=l.filter(x=>x.state=='missed');$('summary').innerHTML=`<div><b>${b.length}</b>Kupione</div><div><b>${l.length-b.length-m.length}</b>Do kupienia</div><div class=r><b>${m.length}</b>Nie kupiono<br><b>${money(b.reduce((s,x)=>s+(+x.amount||0),0))}</b></div>`;renderBudget()}
+function renderDueSuggestions(){
+ let used=new Set(L().map(x=>x.pid)),now=new Date($('date').value+'T12:00'),items=[];
+ db.products.forEach(p=>{if(used.has(p.id))return;let h=purchaseHistory(p.id,'9999-12-31');if(h.length<2)return;let dates=h.map(x=>new Date(x.d+'T12:00')).sort((a,b)=>a-b),g=[];for(let i=1;i<dates.length;i++)g.push((dates[i]-dates[i-1])/86400000);let avg=g.reduce((a,b)=>a+b,0)/g.length,lastD=dates.at(-1),elapsed=(now-lastD)/86400000;if(avg>0&&elapsed>=avg*.8)items.push({p,avg,elapsed})});
+ items.sort((a,b)=>(b.elapsed/b.avg)-(a.elapsed/a.avg));let el=$('dueSuggestions');if(!items.length){el.className='dueSuggestions';el.innerHTML='';return}
+ el.className='dueSuggestions show';el.innerHTML=`<div class=dueBox><div class=dueHead><b>Może czas dokupić</b><span class=sub>na podstawie historii</span></div><div class=dueItems>${items.slice(0,6).map(o=>`<button class=dueItem onclick="addSuggested('${o.p.id}')">${o.p.n}</button>`).join('')}</div></div>`
+}
+function addSuggested(pid){if(L().some(x=>x.pid===pid))return;let u=productUsage(pid);L().push({id:'i'+Date.now()+Math.random(),pid,state:'todo',qty:u.typical||P(pid).q||'',amount:''});save();renderAll();showUndo('Dodano do listy')}
+function setPref(k,v){db.prefs[k]=v;save();renderAll()}
+function renderPrefs(){['hideBought','vibrate','finishConfirm'].forEach(k=>{let e=$('pref'+k[0].toUpperCase()+k.slice(1));if(e)e.checked=!!db.prefs[k]})}
+function toggleCompact(){compactMode=!compactMode;document.body.classList.toggle('compact',compactMode);$('compactBtn')?.classList.toggle('on',compactMode)}
+function markAllTodo(){let l=L();if(!l.length)return;if(!confirm('Ustawić wszystkie pozycje jako „Do kupienia”?'))return;l.forEach(x=>x.state='todo');save();renderAll()}
+function clearBought(){let l=L(),n=l.filter(x=>x.state==='bought').length;if(!n){alert('Brak kupionych pozycji.');return}if(!confirm(`Usunąć ${n} kupionych pozycji z tej listy? Historia cen pozostanie tylko w innych zapisanych listach.`))return;db.lists[$('date').value]=l.filter(x=>x.state!=='bought');save();renderAll()}
+function renderQuickLists(){let e=$('quickListButtons');if(!e)return;let buttons=[];db.templates.slice(0,4).forEach(t=>buttons.push(`<button class=quickListBtn onclick="useTemplate('${t.id}')"><b>${t.name}</b>${t.items.length} pozycji</button>`));let dates=Object.keys(db.lists).filter(d=>d<$('date').value&&db.lists[d]?.some(x=>x.state==='bought')).sort().reverse();if(dates[0])buttons.push(`<button class=quickListBtn onclick="createFromLastBought()"><b>Ostatnie zakupy</b>${dates[0]}</button>`);buttons.push(`<button class=quickListBtn onclick="createTypicalList()"><b>Typowa lista</b>z historii</button>`);e.innerHTML=buttons.join('');let f=$('favoriteQuick');if(f){let fav=db.products.filter(p=>p.f&&!L().some(x=>x.pid===p.id)).slice(0,8);f.innerHTML=fav.length?fav.map(p=>`<button onclick="addSuggested('${p.id}')"><b>+</b> ${p.n}</button>`).join(''):''}}
+function renderTodayStats(){let e=$('todayStats');if(!e)return;let l=L(),spent=l.reduce((a,x)=>a+(x.state==='bought'?+x.amount||0:0),0),todo=l.filter(x=>x.state==='todo').length,miss=l.filter(x=>x.state==='missed').length;e.innerHTML=`<div class=todayStat>Wydano<b>${money(spent)}</b></div><div class=todayStat>Zostało<b>${todo}</b></div><div class=todayStat>Nie kupiono<b>${miss}</b></div>`}
+function renderShoppingProgress(){let e=$('shoppingProgress'),l=L(),done=l.filter(x=>x.state==='bought'||x.state==='missed').length,total=l.length,pct=total?Math.round(done/total*100):0;if(!total){e.innerHTML='';return}e.innerHTML=`<div class=progressTop><b>Postęp zakupów</b><span>${done}/${total} · ${pct}%</span></div><div class=progressTrack><i style="width:${pct}%"></i></div>`}
+function renderToday(){let l=L(),q=$('qToday').value.toLowerCase(),C={all:l.length,todo:l.filter(x=>x.state=='todo').length,bought:l.filter(x=>x.state=='bought').length,missed:l.filter(x=>x.state=='missed').length};$('status').innerHTML=[['all','Wszystkie'],['todo','Do kupienia'],['bought','Kupione']].map(([k,t])=>`<button class="${filt==k?'on':''}" onclick="filt='${k}';renderToday()">${t}<span class=badge>${C[k]}</span></button>`).join('');
+ let rows=l.filter(x=>(filt=='all'||x.state==filt)&&(!db.prefs.hideBought||filt==='bought'||x.state!=='bought')&&P(x.pid)?.n.toLowerCase().includes(q)).sort((a,b)=>{let sa=a.state==='bought'?2:a.state==='missed'?1:0,sb=b.state==='bought'?2:b.state==='missed'?1:0;if(sa!==sb)return sa-sb;if(todaySort==='name')return P(a.pid).n.localeCompare(P(b.pid).n,'pl');if(todaySort==='price')return (+b.amount||0)-(+a.amount||0);return db.cats.indexOf(P(a.pid)?.c)-db.cats.indexOf(P(b.pid)?.c)});
+ let lastCat='',html='';rows.forEach(x=>{let p=P(x.pid);if(!p)return;if(p.c!==lastCat){html+=`<div class=productGroup>${p.c}</div>`;lastCat=p.c}let r=+x.qty&&+x.amount?+x.amount/+x.qty:0,z=last(p.id),cmp=z&&r?(r-z.r)/z.r*100:null,st=x.state=='missed'?'<button class="pill red" onclick="event.stopPropagation();setQuickState(\''+x.id+'\',\'todo\')">Nie kupiono</button>':x.state=='todo'?'<button class="pill blue" onclick="event.stopPropagation();setQuickState(\''+x.id+'\',\'missed\')">Do kupienia</button>':'';let lp=z?`<div class=lastPrice>Ostatnio ${money(z.r)}/${p.u} · ${z.d}${cmp!==null?` <span class="${cmp>0?'up':cmp<0?'down':''}">${cmp>=0?'↑':'↓'} ${Math.abs(cmp).toFixed(1)}%</span>`:''}</div>`:'';html+=`<div class="product ${x.state==='bought'?'boughtRow':''}" onclick="openEdit('${x.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${x.qty||p.q||'—'} ${p.u}</div>${lp}</div><div>${r?`<div class=unitprice>${money(r)}/${p.u}</div><div class=total>${money(x.amount)}</div>`:st}</div><div class="check ${x.state=='bought'?'y':''}" onclick="event.stopPropagation();quickToggle('${x.id}')">${x.state=='bought'?'✓':''}</div></div>`});$('todayList').innerHTML=html;let te=$('todayEmpty');te.className='emptyState'+(rows.length?'':' show');te.textContent=q?'Nie znaleziono produktu dla tego wyszukiwania.':(l.length?'Brak pozycji w tym widoku.':'Lista jest pusta. Dodaj pierwszy produkt.');
+ let b=l.filter(x=>x.state=='bought'),m=l.filter(x=>x.state=='missed');$('summary').innerHTML=`<div><b>${b.length}</b>Kupione</div><div><b>${l.length-b.length-m.length}</b>Do kupienia</div><div class=r><b>${m.length}</b>Nie kupiono<br><b>${money(b.reduce((s,x)=>s+(+x.amount||0),0))}</b></div>`;renderBudget();renderDueSuggestions();renderShoppingProgress();renderQuickLists();renderTodayStats()}
+function setQuickState(id,newState){let x=L().find(a=>a.id===id);if(!x)return;lastUndo={id,old:x.state};x.state=newState;save();renderAll();showUndo(newState==='missed'?'Oznaczono: nie kupiono':'Przywrócono do kupienia')}
+function quickToggle(id){let x=L().find(a=>a.id===id);if(!x)return;lastUndo={id,old:x.state};x.state=x.state==='bought'?'todo':'bought';if(x.state==='bought'&&db.prefs.vibrate&&navigator.vibrate)navigator.vibrate(35);save();renderAll();showUndo(x.state==='bought'?'Oznaczono jako kupione':'Przywrócono do kupienia')}
+function showUndo(t){$('undoText').textContent=t;$('undoToast').classList.add('show');clearTimeout(undoTimer);undoTimer=setTimeout(()=>$('undoToast').classList.remove('show'),4500)}
+function undoLast(){if(!lastUndo)return;let x=L().find(a=>a.id===lastUndo.id);if(x)x.state=lastUndo.old;lastUndo=null;$('undoToast').classList.remove('show');save();renderAll()}
 function productUsage(pid){
  let rows=[];Object.entries(db.lists).forEach(([d,l])=>l.forEach(x=>{if(x.pid===pid&&x.state==='bought')rows.push({d,x})}));
  rows.sort((a,b)=>b.d.localeCompare(a.d));let qs=rows.map(r=>+r.x.qty).filter(x=>x>0);
@@ -222,6 +282,8 @@ function useTemplate(id){let t=db.templates.find(x=>x.id===id);if(!t)return;merg
 function deleteTemplate(id){let t=db.templates.find(x=>x.id===id);if(!t)return;if(!confirm(`Usunąć szablon „${t.name}”?`))return;db.templates=db.templates.filter(x=>x.id!==id);save();renderTemplates()}
 function renderTemplates(){let el=$('templates');if(!el)return;el.innerHTML=db.templates.map(t=>`<div class=templateRow><span><b>${t.name}</b><small class=sub style="display:block">${t.items.length} pozycji</small></span><button class=miniBtn onclick="useTemplate('${t.id}')">Użyj</button><button class="miniBtn red" onclick="deleteTemplate('${t.id}')">Usuń</button></div>`).join('')}
 function copyPrev(){let dates=Object.keys(db.lists).filter(d=>d<$('date').value&&db.lists[d].length).sort().reverse();if(!dates[0])return;db.lists[$('date').value]=db.lists[dates[0]].map(x=>({...x,id:'i'+Date.now()+Math.random(),state:'todo',qty:'',amount:''}));save();renderAll()}function clearList(){db.lists[$('date').value]=[];save();renderAll()}
+function moveCategory(c,dir){let i=db.cats.indexOf(c),j=i+dir;if(i<0||j<0||j>=db.cats.length)return;[db.cats[i],db.cats[j]]=[db.cats[j],db.cats[i]];save();renderAll()}
+function renderCategoryOrder(){let e=$('categoryOrder');if(!e)return;e.innerHTML=db.cats.map((c,i)=>`<div class=orderRow><b>${i+1}. ${c}</b><button class=orderBtn onclick="moveCategory('${c.replace(/'/g,"\\'")}',-1)" ${i===0?'disabled':''}>↑</button><button class=orderBtn onclick="moveCategory('${c.replace(/'/g,"\\'")}',1)" ${i===db.cats.length-1?'disabled':''}>↓</button></div>`).join('')}
 function renderCategoryManager(){
 $('categoryManager').innerHTML=db.cats.map(c=>`<div class="catrow"><span>${c}</span><button class="catdel" onclick="deleteCategory('${c.replace(/'/g,"\\'")}')">Usuń</button></div>`).join('')
 }
@@ -232,7 +294,8 @@ function deleteCategory(c){
  if(!confirm(`Usunąć kategorię „${c}”?`))return;
  db.cats=db.cats.filter(x=>x!==c); if(cat===c)cat='all'; save();renderAll()
 }
-function renderProducts(){renderCategoryManager();let q=$('qProd').value.toLowerCase();$('cats').innerHTML=[['all','Wszystkie'],...db.cats.map(c=>[c,c])].map(([k,t])=>`<button class="cat ${cat==k?'on':''}" onclick="cat='${k}';renderProducts()"><b>${k==='all'?'•':t.slice(0,1).toUpperCase()}</b>${t}</button>`).join('');$('catalog').innerHTML=db.products.filter(p=>(cat=='all'||p.c==cat)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product onclick="editProduct('${p.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c}</div></div><span class=unit>${p.u}</span><button class=star onclick="event.stopPropagation();toggleFav('${p.id}')">${p.f?'★':'☆'}</button></div>`).join('');fillHist()}
+function toggleFavOnly(){favOnly=!favOnly;renderProducts()}
+function renderProducts(){renderCategoryManager();let q=$('qProd').value.toLowerCase();$('cats').innerHTML=[['all','Wszystkie'],...db.cats.map(c=>[c,c])].map(([k,t])=>`<button class="cat ${cat==k?'on':''}" onclick="cat='${k}';renderProducts()"><b>${k==='all'?'•':t.slice(0,1).toUpperCase()}</b>${t}</button>`).join('');$('catalog').innerHTML=db.products.filter(p=>(cat=='all'||p.c==cat)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product onclick="editProduct('${p.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c}</div></div><span class=unit>${p.u}</span><button class=star onclick="event.stopPropagation();toggleFav('${p.id}')">${p.f?'★':'☆'}</button></div>`).join('');fillHist();let pe=$('productEmpty');if(pe){pe.className='emptyState'+(a.length?'':' show');pe.textContent=q?'Nie znaleziono produktu.':'Brak produktów w tej kategorii.'}}
 function toggleFav(id){P(id).f=!P(id).f;save();renderProducts()}
 let editPid=null;
 function editProduct(id){editPid=id;let p=P(id);$('epn').value=p.n;$('epc').innerHTML=db.cats.map(c=>`<option ${c===p.c?'selected':''}>${c}</option>`).join('');$('epu').innerHTML=db.units.map(u=>`<option ${u===p.u?'selected':''}>${u}</option>`).join('');$('epq').value=p.q||'';$('editProductSheet').classList.add('open')}
@@ -246,10 +309,14 @@ function openAdd(){$('qAdd').value='';renderAdd();$('addSheet').classList.add('o
  let sug=db.products.map(p=>({p,u:productUsage(p.id)})).filter(o=>!used.has(o.p.id)&&o.u.count>0).sort((a,b)=>b.u.count-a.u.count).slice(0,6);
  $('smartSuggestions').innerHTML=sug.length?`<div class=suggestTitle>Często kupowane</div><div class=suggestChips>${sug.map(o=>`<button class=suggestChip onclick="addOne('${o.p.id}')">${o.p.n} · ${o.u.typical||o.p.q||'—'} ${o.p.u}</button>`).join('')}</div>`:'';
  $('addRows').innerHTML=db.products.filter(p=>!used.has(p.id)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product onclick="addOne('${p.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c} • ${p.q||'—'} ${p.u}</div></div><b style="color:var(--g)">＋</b><span></span></div>`).join('')}function addOne(pid){let u=productUsage(pid);L().push({id:'i'+Date.now()+Math.random(),pid,state:'todo',qty:u.typical||P(pid).q||'',amount:''});save();renderAdd();renderToday()}
-function openEdit(id){cur=id;let x=L().find(a=>a.id==id),p=P(x.pid);state=x.state;$('editName').textContent=p.n;$('editHero').textContent=productMark(p.n);$('editMeta').textContent=`Kategoria: ${p.c}   •   Domyślna jednostka: ${p.u}`;$('qty').value=x.qty||p.q||'';$('amount').value=x.amount||'';let z=last(p.id);$('compare').textContent=z?`Ostatnia cena: ${money(z.r)}/${p.u} (${z.d})`:'';$('delta').textContent='';calc();$('editSheet').classList.add('open')}function closeSheet(){$('editSheet').classList.remove('open')}function setState(s){state=s}
+function openEdit(id){cur=id;let x=L().find(a=>a.id==id),p=P(x.pid);state=x.state;$('editName').textContent=p.n;$('editHero').textContent=productMark(p.n);$('editMeta').textContent=`Kategoria: ${p.c}   •   Domyślna jednostka: ${p.u}`;$('qty').value=x.qty||p.q||'';$('amount').value=x.amount||'';let z=last(p.id),hist=purchaseHistory(p.id).slice(0,4);$('compare').textContent=z?`Ostatnia cena: ${money(z.r)}/${p.u} (${z.d})`:'';$('recentPrices').innerHTML=hist.map(h=>`<button class=priceChip onclick="applyRecentPrice(${h.r})"><b>${money(h.r)}/${p.u}</b>${h.d}</button>`).join('')||'<span class=sub>Brak wcześniejszych cen</span>';$('delta').textContent='';calc();$('editSheet').classList.add('open');setTimeout(()=>{let q=$('qty');if(q){q.focus();q.select()}},120)}function closeSheet(){$('editSheet').classList.remove('open')}function setState(s){state=s}
+function useLastPrice(){let x=L().find(a=>a.id==cur),p=x&&P(x.pid),r=p&&purchaseHistory(p.id,$('date').value)[0];if(!r)return;applyRecentPrice(r)}
+function stepQty(dir){let p=P(L().find(x=>x.id==cur)?.pid),input=$('qty'),v=+input.value||0,step=p?.u==='kg'?.1:1;v=Math.max(0,v+dir*step);input.value=p?.u==='kg'?v.toFixed(1):String(Math.round(v));calc()}
+function applyRecentPrice(r){let q=+$('qty').value;if(!q){$('qty').focus();return}$('amount').value=(q*r).toFixed(2);calc()}
 function calc(){let x=L().find(a=>a.id==cur),p=x&&P(x.pid),r=+$('qty').value&&+$('amount').value?+$('amount').value/+$('qty').value:0;$('calc').textContent=r?`${money(r)}/${p.u}`:'—';let z=p&&last(p.id);if(z&&r){let d=r-z.r;$('delta').textContent=`${d>=0?'+':''}${money(d)} (${d/z.r*100>=0?'+':''}${(d/z.r*100).toFixed(0)}%)`}}
-function saveEdit(){let x=L().find(a=>a.id==cur);Object.assign(x,{state,qty:$('qty').value,amount:$('amount').value});save();closeSheet();renderAll()}function removeItem(){db.lists[$('date').value]=L().filter(x=>x.id!=cur);save();closeSheet();renderAll()}
-let histDays=30;
+function saveEdit(){let x=L().find(a=>a.id==cur);Object.assign(x,{state,qty:$('qty').value,amount:$('amount').value});save();closeSheet();renderAll()}
+function saveBought(){state='bought';if(db.prefs.vibrate&&navigator.vibrate)navigator.vibrate(35);saveEdit()}function removeItem(){db.lists[$('date').value]=L().filter(x=>x.id!=cur);save();closeSheet();renderAll()}
+let histDays=30,lastUndo=null,undoTimer=null,favOnly=false,todaySort='route',compactMode=false;
 function setHistDays(n){histDays=n;document.querySelectorAll('#histPeriods button').forEach(b=>b.classList.toggle('on',+b.dataset.days===n));renderHistory()}
 function fillHist(){let old=$('histProd').value;$('histProd').innerHTML=db.products.map(p=>`<option value="${p.id}">${p.n}</option>`).join('');if(old)$('histProd').value=old}
 function renderHistory(){
@@ -300,7 +367,12 @@ function renderReports(){
  if(!vals.length)$('reportChart').innerHTML='<div class=histEmpty>Brak danych w wybranym okresie</div>';
  else{let W=305,H=125,pad=18,bw=Math.max(3,(W-pad*2)/vals.length*.55);$('reportChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}">${vals.map(([d,v],i)=>{let x=pad+i*((W-pad*2)/Math.max(1,vals.length)),h=v/mx*85;return `<rect x="${x}" y="${100-h}" width="${bw}" height="${h}" rx="2" fill="#078a49"><title>${d}: ${v.toFixed(2)} zł</title></rect>`}).join('')}<line x1="10" y1="100" x2="295" y2="100" stroke="#dfe5e1"/></svg>`}
  let cats={};rows.forEach(r=>cats[r.p.c]=(cats[r.p.c]||0)+r.amount);let cm=Math.max(1,...Object.values(cats));$('reportCats').innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<div class=reportBar><span>${c}</span><div class=reportBarTrack><i style="width:${v/cm*100}%"></i></div><b>${money(v)}</b></div>`).join('')||'<div class=sub>Brak danych.</div>';
- let prod={};rows.forEach(r=>{let x=prod[r.p.id]||(prod[r.p.id]={p:r.p,count:0,amount:0,qty:0});x.count++;x.amount+=r.amount;x.qty+=r.qty});$('reportProducts').innerHTML=Object.values(prod).sort((a,b)=>b.count-a.count).slice(0,10).map(x=>`<div class=reportProduct><b>${x.p.n}</b><span>${x.count}×</span><span>${money(x.amount)}</span></div>`).join('')||'<div class=sub>Brak danych.</div>'
+ let prod={};rows.forEach(r=>{let x=prod[r.p.id]||(prod[r.p.id]={p:r.p,count:0,amount:0,qty:0});x.count++;x.amount+=r.amount;x.qty+=r.qty});$('reportProducts').innerHTML=Object.values(prod).sort((a,b)=>b.count-a.count).slice(0,10).map(x=>`<div class=reportProduct><b>${x.p.n}</b><span>${x.count}×</span><span>${money(x.amount)}</span></div>`).join('')||'<div class=sub>Brak danych.</div>';
+ let ins=[],top=Object.values(prod).sort((a,b)=>b.amount-a.amount)[0];if(top)ins.push(`<div class=insight><b>Największy koszt</b>${top.p.n}: ${money(top.amount)} w wybranym okresie.</div>`);
+ let priced={};rows.filter(r=>r.unit>0).forEach(r=>(priced[r.p.id]||(priced[r.p.id]=[])).push(r));let changes=[];Object.values(priced).forEach(a=>{a.sort((x,y)=>x.d.localeCompare(y.d));if(a.length>1){let first=a[0],last=a.at(-1),pct=(last.unit-first.unit)/first.unit*100;changes.push({p:last.p,pct})}});let rise=changes.sort((a,b)=>b.pct-a.pct)[0];if(rise&&rise.pct>0)ins.push(`<div class=insight><b>Największy wzrost ceny</b>${rise.p.n}: +${rise.pct.toFixed(1)}%.</div>`);
+ let avgItems=days.length?rows.length/days.length:0;if(days.length)ins.push(`<div class=insight><b>Typowa lista</b>Średnio ${avgItems.toFixed(1)} kupionych pozycji na dzień zakupowy.</div>`);
+ $('reportInsights').innerHTML=ins.join('')||'<div class=sub>Za mało danych do wyciągnięcia wniosków.</div>';
+ let months={};Object.entries(db.lists).forEach(([d,l])=>{let m=d.slice(0,7),spent=l.reduce((ss,x)=>ss+(x.state==='bought'?+x.amount||0:0),0),cnt=l.filter(x=>x.state==='bought').length;if(spent||cnt){let o=months[m]||(months[m]={spent:0,count:0,days:0});o.spent+=spent;o.count+=cnt;o.days++}});$('monthlyReport').innerHTML=Object.entries(months).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,12).map(([m,o])=>`<div class=monthRow><b>${m}</b><span>${o.count} poz. · ${o.days} dni</span><b>${money(o.spent)}</b></div>`).join('')||'<div class=sub>Brak danych miesięcznych.</div>'
 }
 function exportCSV(){
  let rows=reportData(),lines=[['Data','Produkt','Kategoria','Ilość','Jednostka','Kwota','Cena jednostkowa']];
@@ -315,8 +387,10 @@ function renderAll(){
  try{renderProducts()}catch(e){console.error('products',e)}
  try{fillHist();renderHistory()}catch(e){console.error('history',e)}
  try{renderUnits()}catch(e){console.error('units',e)}
+ try{renderCategoryOrder()}catch(e){console.error('category order',e)}
  try{renderTemplates()}catch(e){console.error('templates',e)}
  try{renderReports()}catch(e){console.error('reports',e)}
+ try{renderBackupStatus();renderStorageStats();renderPrefs();renderWeekSnapshot();renderAppHealth()}catch(e){console.error('backup',e)}
  document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=I(el.dataset.icon)})
  try{save()}catch(e){console.error('save',e)}
 }
