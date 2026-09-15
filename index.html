@@ -34,7 +34,7 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 </style>
 </head><body><main class="app">
 <section id="today" class="page active">
-<div class="top"><span class="ico">▰</span><span class="grow">Giełda • Zakupy</span><button class="iconbtn">⚙</button></div>
+<div class="top"><span class="ico">▰</span><span class="grow">Giełda • Zakupy <small style="font-size:8px;color:#8a938d">V6.3</small></span><button class="iconbtn">⚙</button></div>
 <div class="date"><button onclick="shift(-1)">‹</button><input id="date" type="date"><button onclick="shift(1)">›</button></div>
 <div id="status" class="seg"></div><div class="searchrow"><input id="qToday" class="search" placeholder="⌕  Szukaj produktu..." oninput="renderToday()"><button class="filter">☷</button></div>
 <div id="todayList"></div><div class="summary"><div id="summary" class="summarygrid"></div><button class="primary" onclick="openAdd()">＋ &nbsp; Dodaj produkt</button></div>
@@ -89,7 +89,13 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 const KEY='gielda-v6'; const E={}; const productMark=n=>(n||'?').trim().slice(0,2).toUpperCase();
 const seed={cats:['Warzywa','Owoce','Nabiał','Pozostałe'],products:[
 {id:'p1',n:'Pomidor malinowy',c:'Warzywa',u:'kg',q:10,f:1},{id:'p2',n:'Pomidor cherry',c:'Warzywa',u:'op.',q:4,f:0},{id:'p3',n:'Ogórek',c:'Warzywa',u:'kg',q:5,f:1},{id:'p4',n:'Papryka czerwona',c:'Warzywa',u:'kg',q:8,f:0},{id:'p5',n:'Sałata lodowa',c:'Warzywa',u:'szt.',q:12,f:1},{id:'p6',n:'Banan',c:'Owoce',u:'kg',q:15,f:1},{id:'p7',n:'Marchew',c:'Warzywa',u:'kg',q:10,f:0},{id:'p8',n:'Ziemniaki',c:'Warzywa',u:'kg',q:20,f:0},{id:'p9',n:'Cebula',c:'Warzywa',u:'kg',q:10,f:0},{id:'p10',n:'Jabłko',c:'Owoce',u:'kg',q:10,f:0},{id:'p11',n:'Cytryna',c:'Owoce',u:'szt.',q:8,f:0},{id:'p12',n:'Winogrona',c:'Owoce',u:'kg',q:5,f:0}],lists:{}};
-let db=JSON.parse(localStorage.getItem(KEY)||'null')||seed, filt='all', cat='all', cur=null, state='bought';
+let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){db=null}
+if(!db||typeof db!=='object')db=structuredClone(seed);
+if(!Array.isArray(db.cats))db.cats=Array.isArray(db.categories)?db.categories.slice():seed.cats.slice();
+if(!Array.isArray(db.products))db.products=structuredClone(seed.products);
+if(!db.lists||typeof db.lists!=='object')db.lists={};
+db.products=db.products.map((p,i)=>({id:p.id||('p'+i),n:p.n||p.name||'Produkt',c:p.c||p.cat||db.cats[0]||'Pozostałe',u:p.u||p.unit||'szt.',q:p.q??p.qty??'',f:p.f??p.fav??0}));
+let filt='all', cat='all', cur=null, state='bought';
 const $=x=>document.getElementById(x), P=id=>db.products.find(p=>p.id===id), save=()=>localStorage.setItem(KEY,JSON.stringify(db)), money=x=>(+x||0).toLocaleString('pl-PL',{style:'currency',currency:'PLN'});
 $('date').value=new Date().toLocaleDateString('en-CA'); function L(d=$('date').value){return db.lists[d]||(db.lists[d]=[])}
 if(!Object.keys(db.lists).length){let d=$('date').value;db.lists[d]=['p1','p3','p4','p5','p6','p7','p8','p9','p10'].map((pid,i)=>({id:'i'+i,pid,state:i==0||i==4?'bought':i==3||i==8?'missed':'todo',qty:i==0?10:i==4?15:'',amount:i==0?85:i==4?78:'',vendor:'',note:''}));save()}
@@ -122,6 +128,14 @@ function saveEdit(){let x=L().find(a=>a.id==cur);Object.assign(x,{state,qty:$('q
 function fillHist(){let old=$('histProd').value;$('histProd').innerHTML=db.products.map(p=>`<option value="${p.id}">${p.n}</option>`).join('');if(old)$('histProd').value=old}
 function renderHistory(){let pid=$('histProd').value||db.products[0].id,p=P(pid);$('histPic').textContent=productMark(p.n);let a=[];Object.entries(db.lists).forEach(([d,l])=>l.forEach(x=>{if(x.pid==pid&&x.state=='bought'&&+x.qty&&+x.amount)a.push({d,r:+x.amount/+x.qty,x})}));a.sort((x,y)=>x.d.localeCompare(y.d));let vals=a.map(x=>x.r),lo=vals.length?Math.min(...vals):0,hi=vals.length?Math.max(...vals):1,pts=a.map((x,i)=>`${18+i*(270/Math.max(1,a.length-1))},${145-(x.r-lo)/Math.max(1,hi-lo)*105}`).join(' ');$('chart').innerHTML=a.length?`<svg viewBox="0 0 305 165"><g stroke="#e6ebe7" stroke-width="1"><line x1="18" y1="40" x2="292" y2="40"/><line x1="18" y1="75" x2="292" y2="75"/><line x1="18" y1="110" x2="292" y2="110"/><line x1="18" y1="145" x2="292" y2="145"/></g><polyline points="${pts}" fill="none" stroke="#078a49" stroke-width="2.5"/><g fill="#078a49">${pts.split(' ').map(q=>{let [x,y]=q.split(',');return `<circle cx="${x}" cy="${y}" r="3"/>`}).join('')}</g></svg>`:'<div style="text-align:center;padding-top:70px;color:#68736c;font-size:11px">Brak danych cenowych</div>';let lastv=vals.at(-1)||0,avg=vals.length?vals.reduce((s,x)=>s+x,0)/vals.length:0;$('stats').innerHTML=`<div class=stat>Ostatnia cena<b>${money(lastv)}/${p.u}</b></div><div class=stat>Średnia 30 dni<b>${money(avg)}/${p.u}</b></div><div class=stat>Najniższa<b>${money(vals.length?Math.min(...vals):0)}/${p.u}</b></div><div class=stat>Najwyższa<b>${money(vals.length?Math.max(...vals):0)}/${p.u}</b></div>`;$('histRows').innerHTML=a.slice().reverse().map(r=>`<div class=historyrow><span class=greenDot></span><b>${r.d}</b><span>${r.x.qty} ${p.u}</span><span>${money(r.r)}/${p.u}</span><span>${money(r.x.amount)}</span></div>`).join('')}
 function exportData(){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(db,null,2)],{type:'application/json'}));a.download='gielda-backup.json';a.click()}function importData(i){let f=i.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{db=JSON.parse(r.result);save();renderAll()}catch(e){alert('Nieprawidłowy plik')}};r.readAsText(f)}
-function renderAll(){renderToday();renderLists();renderProducts();fillHist();renderHistory();save()}renderAll();
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js');
+function renderAll(){
+ try{renderToday()}catch(e){console.error('today',e)}
+ try{renderLists()}catch(e){console.error('lists',e)}
+ try{renderProducts()}catch(e){console.error('products',e)}
+ try{fillHist();renderHistory()}catch(e){console.error('history',e)}
+ try{save()}catch(e){console.error('save',e)}
+}
+renderAll();
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{})}
+if('caches' in window){caches.keys().then(ks=>Promise.all(ks.map(k=>caches.delete(k)))).catch(()=>{})}
 </script></body></html>
