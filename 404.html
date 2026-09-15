@@ -8,6 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="Giełda">
 <meta name="theme-color" content="#ffffff">
 <link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <title>Giełda • Zakupy</title>
 <style>
 :root{--g:#078a49;--gd:#066c3b;--pale:#edf8f1;--ink:#101815;--mut:#68736c;--line:#dfe5e1;--red:#e54d4d;--redbg:#fee9e9;--blue:#2379bb;--bluebg:#e9f4fc;--bg:#fff}
@@ -31,23 +32,57 @@ button,input,select,textarea{font:inherit;color:inherit}.app{max-width:480px;mar
 nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:5px 6px calc(5px + env(safe-area-inset-bottom));z-index:20}.navin{max-width:480px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr)}.nav{border:0;background:none;color:#6b746e;font-size:8px;padding:4px}.nav b{display:block;font-size:17px;margin-bottom:2px}.nav.on{color:var(--g);font-weight:700}
 .sheetwrap{display:none;position:fixed;inset:0;background:#0007;z-index:50;align-items:flex-end}.sheetwrap.open{display:flex}.sheet{background:#fff;width:min(480px,100%);max-height:96vh;overflow:auto;border-radius:20px 20px 0 0;padding:12px 12px calc(15px + env(safe-area-inset-bottom))}.sheethead{display:flex;align-items:center}.sheethead h2{font-size:17px;flex:1;margin:4px 0}.close{border:0;border-radius:50%;width:31px;height:31px}.hero{height:145px;display:grid;place-items:center;font-size:42px;font-weight:900;color:var(--g);background:#f4faf6;border-radius:14px;margin:8px 0}.twotabs{display:grid;grid-template-columns:1fr 1fr;background:#f0f2f1;border-radius:9px;padding:2px}.twotabs button{border:0;background:none;padding:9px;border-radius:8px;font-size:11px}.twotabs button.on{background:var(--g);color:#fff}.label{font-size:10px;font-weight:700;margin:10px 0 5px}.status3{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.status3 button{border:0;border-radius:8px;padding:9px 4px;font-size:10px;background:#f1f3f2}.status3 .buy{background:var(--g);color:#fff}.status3 .no{background:var(--redbg);color:var(--red)}.two{display:grid;grid-template-columns:1fr 1fr;gap:7px}.field{border:1px solid var(--line);border-radius:9px;padding:10px;width:100%;background:#fff}.calc{display:flex;justify-content:space-between;background:var(--pale);color:var(--g);font-weight:800;border-radius:9px;padding:11px;margin-top:8px}.note{min-height:70px}.compare{font-size:10px;color:var(--mut);margin:10px 0}.delta{color:var(--g);font-size:13px;font-weight:800}.sheetfoot{display:grid;grid-template-columns:1fr 1.35fr;gap:8px}.delete{border:1px solid var(--red);color:var(--red);background:#fff;border-radius:9px;font-weight:700}.save{border:0;color:#fff;background:var(--g);border-radius:9px;padding:12px;font-weight:800}
 @media(min-width:700px){body{background:#f3f5f3}.app{background:#fff;box-shadow:0 0 30px #0001}}
+
+.svgico{width:20px;height:20px;display:inline-block;vertical-align:middle}
+.svgico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav .svgico{display:block;margin:0 auto 2px;width:19px;height:19px}
+
+.histEmpty{text-align:center;padding:55px 10px;color:var(--mut);font-size:11px}
+.chartLabels{font-size:8px;fill:#778079}
+.priceUp{color:var(--red)}.priceDown{color:var(--g)}
+
+.budgetTop{display:flex;align-items:center;justify-content:space-between;gap:8px}.budgetTop>div>b{font-size:15px}
+.budgetEdit{border:0;background:none;color:var(--g);font-weight:800;padding:0}.budgetBar{height:7px;background:#edf0ee;border-radius:99px;overflow:hidden;margin-top:8px}.budgetBar i{display:block;height:100%;width:0;background:var(--g);border-radius:99px;transition:width .2s}.budgetBar i.over{background:var(--red)}
+.spendSummary{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}.spendBox{background:#f5f7f5;border-radius:8px;padding:8px 4px;text-align:center;font-size:8px}.spendBox b{display:block;font-size:12px;margin-top:2px}
+.catSpendRow{display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px 0;border-top:1px solid #eef1ef;font-size:10px}.catSpendRow:first-child{margin-top:8px}
+
+.smartAction{width:100%;border:0;border-top:1px solid #edf0ee;background:#fff;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:10px 2px;color:var(--ink)}
+.smartAction:first-of-type{margin-top:7px}.smartAction span{display:block}.smartAction b{font-size:11px}.smartAction small{display:block;color:var(--mut);font-size:8px;margin-top:2px}.smartAction strong{color:var(--g);font-size:18px}
+.templateRow{display:flex;align-items:center;gap:7px;border-top:1px solid #edf0ee;padding:8px 2px}.templateRow span{flex:1;font-size:10px}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:7px;padding:5px 7px;font-size:9px}.miniBtn.red{color:var(--red);border-color:#efcaca}
+.suggestTitle{font-size:9px;color:var(--mut);margin:10px 0 3px}.suggestChips{display:flex;gap:5px;overflow:auto}.suggestChip{border:1px solid #dce8df;background:#f4faf6;color:var(--g);border-radius:99px;padding:7px 9px;white-space:nowrap;font-size:9px}
+
+.reportKpis{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:9px}.reportKpi{background:#f5f7f5;border-radius:9px;padding:9px;font-size:8px}.reportKpi b{display:block;font-size:14px;margin-top:2px}
+.reportChart{height:135px}.reportChart svg{width:100%;height:100%}.reportBar{display:grid;grid-template-columns:90px 1fr 65px;gap:6px;align-items:center;padding:5px 0;font-size:9px}.reportBarTrack{height:6px;background:#edf0ee;border-radius:99px;overflow:hidden}.reportBarTrack i{display:block;height:100%;background:var(--g);border-radius:99px}
+.reportProduct{display:grid;grid-template-columns:1fr auto auto;gap:8px;border-top:1px solid #eef1ef;padding:7px 0;font-size:9px}.reportBtns{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.reportBtns button{padding:9px}
+@media print{nav,.top .iconbtn,.reportBtns,.card:not(:first-of-type){display:none!important}.app{max-width:none;padding:0}.page{display:none!important}#more{display:block!important}body{background:#fff}}
 </style>
 </head><body><main class="app">
 <section id="today" class="page active">
-<div class="top"><span class="ico">▰</span><span class="grow">Giełda • Zakupy <small style="font-size:8px;color:#8a938d">V6.4</small></span><button class="iconbtn">⚙</button></div>
+<div class="top"><span class="ico" data-icon="bag"></span><span class="grow">Giełda • Zakupy <small style="font-size:8px;color:#8a938d">V7.0</small></span><button class="iconbtn">⚙</button></div>
 <div class="date"><button onclick="shift(-1)">‹</button><input id="date" type="date"><button onclick="shift(1)">›</button></div>
 <div id="status" class="seg"></div><div class="searchrow"><input id="qToday" class="search" placeholder="⌕  Szukaj produktu..." oninput="renderToday()"><button class="filter">☷</button></div>
-<div id="todayList"></div><div class="summary"><div id="summary" class="summarygrid"></div><button class="primary" onclick="openAdd()">＋ &nbsp; Dodaj produkt</button></div>
+<div id="todayList"></div><div class="card budgetCard">
+<div class="budgetTop"><div><div class="sub">Budżet listy</div><b id="budgetSpent">0,00 zł</b> <span class="sub">z</span> <button class="budgetEdit" onclick="setBudget()"><span id="budgetLimit">ustaw budżet</span></button></div><b id="budgetLeft"></b></div>
+<div class="budgetBar"><i id="budgetFill"></i></div><div id="budgetInfo" class="sub" style="margin-top:5px"></div></div><div class="summary"><div id="summary" class="summarygrid"></div><button class="primary" onclick="openAdd()">+ &nbsp; Dodaj produkt</button>
+<button class="primary" style="background:#fff;color:var(--g);border:1px solid var(--g)" onclick="finishShopping()">Zakończ zakupy</button></div>
 </section>
 
 <section id="lists" class="page">
-<div class="top"><span class="ico">▦</span><span class="grow">Listy zakupów</span><button class="plus" onclick="go('today')">+</button></div>
+<div class="top"><span class="ico" data-icon="cal"></span><span class="grow">Listy zakupów</span><button class="plus" onclick="go('today')">+</button></div>
 <div class="card"><div id="month" class="month"></div><div id="calendar" class="cal"></div></div>
-<div id="listCard"></div><b style="font-size:13px">Ostatnie listy</b><div id="recent"></div>
+<div id="listCard"></div><div class="card"><b style="font-size:12px">Podsumowanie wydatków</b><div id="spendSummary" class="spendSummary"></div><div id="categorySpend"></div></div>
+<div class="card">
+<div style="display:flex;align-items:center;justify-content:space-between"><b style="font-size:12px">Szybkie tworzenie listy</b><span class="sub">V6.8</span></div>
+<button class="smartAction" onclick="createTypicalList()"><span><b>Typowa lista</b><small>Najczęściej kupowane produkty i typowe ilości</small></span><strong>›</strong></button>
+<button class="smartAction" onclick="createFromLastBought()"><span><b>Ostatnie zakupy</b><small>Produkty z ostatniej zakończonej listy</small></span><strong>›</strong></button>
+<button class="smartAction" onclick="saveTemplate()"><span><b>Zapisz jako szablon</b><small>Zachowaj obecną listę do ponownego użycia</small></span><strong>+</strong></button>
+<div id="templates"></div>
+</div>
+<b style="font-size:13px">Ostatnie listy</b><div id="recent"></div>
 </section>
 
 <section id="products" class="page">
-<div class="top"><span class="ico">▰</span><span class="grow">Produkty</span><button class="plus" onclick="openProduct()">+</button></div>
+<div class="top"><span class="ico" data-icon="bag"></span><span class="grow">Produkty</span><button class="plus" onclick="openProduct()">+</button></div>
 <div class="searchrow"><input id="qProd" class="search" placeholder="⌕  Szukaj produktu..." oninput="renderProducts()"><button class="filter">☷</button></div>
 <div id="cats" class="cats"></div>
 <div class="card" style="padding:8px 10px">
@@ -61,19 +96,31 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 </section>
 
 <section id="history" class="page">
-<div class="top"><span class="ico">▥</span><span class="grow">Historia i analizy</span></div>
+<div class="top"><span class="ico" data-icon="chart"></span><span class="grow">Historia i analizy</span></div>
 <div class="historyhead"><div id="histPic" class="pic">🍅</div><select id="histProd" onchange="renderHistory()"></select></div>
 <div class="seg"><button class="on">Ceny</button><button>Zakupy</button><button>Statystyki</button></div>
-<div class="periods"><button>7 dni</button><button class="on">30 dni</button><button>3 miesiące</button><button>Rok</button></div>
-<div class="charttitle">Cena za kg (zł)</div><div id="chart" class="chart"></div><div id="stats" class="stats"></div>
+<div id="histPeriods" class="periods"><button data-days="7" onclick="setHistDays(7)">7 dni</button><button data-days="30" class="on" onclick="setHistDays(30)">30 dni</button><button data-days="90" onclick="setHistDays(90)">3 miesiące</button><button data-days="365" onclick="setHistDays(365)">Rok</button></div>
+<div id="priceCompare" class="card" style="display:grid;grid-template-columns:1fr auto;align-items:center;margin-top:8px">
+<div><div class="sub">Zmiana względem poprzedniego zakupu</div><b id="priceDelta" style="font-size:16px">—</b></div>
+<div id="priceDeltaPct" style="font-weight:800">—</div></div>
+<div class="charttitle">Cena jednostkowa (zł)</div><div id="chart" class="chart"></div><div id="stats" class="stats"></div>
 <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:12px">Ostatnie zakupy</b><span style="font-size:9px;color:var(--blue)">Zobacz wszystkie ›</span></div><div id="histRows"></div>
 </section>
 
-<section id="more" class="page"><div class="top"><span class="ico">•••</span><span class="grow">Więcej</span></div>
+<section id="more" class="page"><div class="top"><span class="ico" data-icon="more"></span><span class="grow">Więcej</span></div>
+<div class="card">
+<div style="display:flex;align-items:center;justify-content:space-between"><b>Raporty</b><select id="reportRange" class="miniBtn" onchange="renderReports()"><option value="7">7 dni</option><option value="30" selected>30 dni</option><option value="90">3 miesiące</option><option value="365">Rok</option></select></div>
+<div id="reportKpis" class="reportKpis"></div>
+<div class="charttitle">Wydatki w czasie</div><div id="reportChart" class="reportChart"></div>
+<div class="charttitle">Kategorie</div><div id="reportCats"></div>
+<div class="charttitle">Najczęściej kupowane</div><div id="reportProducts"></div>
+<div class="reportBtns"><button class="miniBtn" onclick="exportCSV()">Eksport CSV</button><button class="miniBtn" onclick="printReport()">Drukuj / PDF</button></div>
+</div>
+<div class="card"><div style="display:flex;align-items:center;justify-content:space-between"><b>Jednostki</b><button class="iconbtn" style="width:auto;padding:0 10px;border-radius:9px;font-size:11px" onclick="addUnit()">+ Dodaj</button></div><div id="unitManager"></div></div>
 <div class="card"><b>Kopia bezpieczeństwa</b><p class="sub">Dane są zapisywane lokalnie na tym urządzeniu.</p><button class="primary" onclick="exportData()">Eksport JSON</button><input id="importer" type="file" hidden accept=".json" onchange="importData(this)"><button class="primary" style="background:#fff;color:var(--g);border:1px solid var(--g)" onclick="importer.click()">Import JSON</button></div></section>
 </main>
 
-<nav><div class="navin"><button class="nav on" data-go="today"><b>▣</b>Dzisiaj</button><button class="nav" data-go="lists"><b>▤</b>Listy</button><button class="nav" data-go="products"><b>◇</b>Produkty</button><button class="nav" data-go="history"><b>◷</b>Historia</button><button class="nav" data-go="more"><b>•••</b>Więcej</button></div></nav>
+<nav><div class="navin"><button class="nav on" data-go="today"><span data-icon="bag"></span>Dzisiaj</button><button class="nav" data-go="lists"><span data-icon="cal"></span>Listy</button><button class="nav" data-go="products"><span data-icon="box"></span>Produkty</button><button class="nav" data-go="history"><span data-icon="chart"></span>Historia</button><button class="nav" data-go="more"><span data-icon="more"></span>Więcej</button></div></nav>
 
 <div id="editSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2 id="editName">Produkt</h2><button class="close" onclick="closeSheet()">×</button></div><div id="editHero" class="hero">🍅</div><div id="editMeta" class="sub"></div>
 <div class="twotabs"><button class="on">Szybki wpis</button><button>Szczegóły</button></div><div class="label">Status</div><div class="status3"><button onclick="setState('todo')">Do kupienia</button><button class="buy" onclick="setState('bought')">✓ Kupione</button><button class="no" onclick="setState('missed')">Nie kupiono</button></div>
@@ -81,11 +128,31 @@ nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid 
 <div class="calc"><span>Cena za kg</span><span id="calc">—</span></div><div id="compare" class="compare"></div><div id="delta" class="delta"></div>
 <div class="sheetfoot"><button class="delete" onclick="removeItem()">Usuń</button><button class="save" onclick="saveEdit()">✓ &nbsp; Zapisz</button></div></div></div>
 
-<div id="addSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2>Dodaj produkt</h2><button class="close" onclick="document.getElementById('addSheet').classList.remove('open')">×</button></div><input id="qAdd" class="search" placeholder="Szukaj..." oninput="renderAdd()"><div id="addRows"></div></div></div>
+<div id="addSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2>Dodaj produkt</h2><button class="close" onclick="document.getElementById('addSheet').classList.remove('open')">×</button></div><input id="qAdd" class="search" placeholder="Szukaj..." oninput="renderAdd()">
+<div id="smartSuggestions"></div><div id="addRows"></div></div></div>
 
-<div id="prodSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2>Nowy produkt</h2><button class="close" onclick="document.getElementById('prodSheet').classList.remove('open')">×</button></div><div class="label">Nazwa</div><input id="pn" class="field"><div class="two"><div><div class="label">Kategoria</div><select id="pc" class="field"></select></div><div><div class="label">Jednostka</div><select id="pu" class="field"><option>kg</option><option>szt.</option><option>op.</option><option>karton</option></select></div></div><div class="label">Domyślna ilość</div><input id="pq" class="field" type="number" step=".01"><button class="primary" onclick="saveProduct()">Zapisz produkt</button></div></div>
+<div id="editProductSheet" class="sheetwrap"><div class="sheet">
+<div class="sheethead"><h2>Edytuj produkt</h2><button class="close" onclick="$('editProductSheet').classList.remove('open')">×</button></div>
+<div class="label">Nazwa</div><input id="epn" class="field">
+<div class="two"><div><div class="label">Kategoria</div><select id="epc" class="field"></select></div><div><div class="label">Jednostka</div><select id="epu" class="field"></select></div></div>
+<div class="label">Domyślna ilość</div><input id="epq" class="field" type="number" step=".01">
+<div class="sheetfoot" style="margin-top:12px"><button class="delete" onclick="deleteProduct()">Usuń produkt</button><button class="save" onclick="saveProductEdit()">Zapisz</button></div>
+</div></div>
+<div id="prodSheet" class="sheetwrap"><div class="sheet"><div class="sheethead"><h2>Nowy produkt</h2><button class="close" onclick="document.getElementById('prodSheet').classList.remove('open')">×</button></div><div class="label">Nazwa</div><input id="pn" class="field"><div class="two"><div><div class="label">Kategoria</div><select id="pc" class="field"></select></div><div><div class="label">Jednostka</div><select id="pu" class="field"></select></div></div><div class="label">Domyślna ilość</div><input id="pq" class="field" type="number" step=".01"><button class="primary" onclick="saveProduct()">Zapisz produkt</button></div></div>
 
 <script>
+const ICON={
+bag:`<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>`,
+cal:`<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg>`,
+box:`<svg viewBox="0 0 24 24"><path d="m4 7 8-4 8 4v10l-8 4-8-4V7Z"/><path d="m4 7 8 4 8-4M12 11v10"/></svg>`,
+chart:`<svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>`,
+more:`<svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>`,
+search:`<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>`,
+trash:`<svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></svg>`,
+edit:`<svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13 7 4 4"/></svg>`
+};
+const I=n=>`<span class="svgico">${ICON[n]||''}</span>`;
+
 const KEY='gielda-v6'; const E={}; const productMark=n=>(n||'?').trim().slice(0,2).toUpperCase();
 const seed={cats:['Warzywa','Owoce','Nabiał','Pozostałe'],products:[
 {id:'p1',n:'Pomidor malinowy',c:'Warzywa',u:'kg',q:10,f:1},{id:'p2',n:'Pomidor cherry',c:'Warzywa',u:'op.',q:4,f:0},{id:'p3',n:'Ogórek',c:'Warzywa',u:'kg',q:5,f:1},{id:'p4',n:'Papryka czerwona',c:'Warzywa',u:'kg',q:8,f:0},{id:'p5',n:'Sałata lodowa',c:'Warzywa',u:'szt.',q:12,f:1},{id:'p6',n:'Banan',c:'Owoce',u:'kg',q:15,f:1},{id:'p7',n:'Marchew',c:'Warzywa',u:'kg',q:10,f:0},{id:'p8',n:'Ziemniaki',c:'Warzywa',u:'kg',q:20,f:0},{id:'p9',n:'Cebula',c:'Warzywa',u:'kg',q:10,f:0},{id:'p10',n:'Jabłko',c:'Owoce',u:'kg',q:10,f:0},{id:'p11',n:'Cytryna',c:'Owoce',u:'szt.',q:8,f:0},{id:'p12',n:'Winogrona',c:'Owoce',u:'kg',q:5,f:0}],lists:{}};
@@ -93,7 +160,7 @@ let db;try{db=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){db=null}
 if(!db||typeof db!=='object')db=structuredClone(seed);
 if(!Array.isArray(db.cats))db.cats=Array.isArray(db.categories)?db.categories.slice():seed.cats.slice();
 if(!Array.isArray(db.products))db.products=structuredClone(seed.products);
-if(!db.lists||typeof db.lists!=='object')db.lists={};
+if(!db.lists||typeof db.lists!=='object')db.lists={};if(!Array.isArray(db.units))db.units=['kg','szt.','op.','karton','skrzynka','pęczek'];if(!db.budgets||typeof db.budgets!=='object')db.budgets={};if(!Array.isArray(db.templates))db.templates=[];
 db.products=db.products.map((p,i)=>({id:p.id||('p'+i),n:p.n||p.name||'Produkt',c:p.c||p.cat||db.cats[0]||'Pozostałe',u:p.u||p.unit||'szt.',q:p.q??p.qty??'',f:p.f??p.fav??0}));
 let filt='all', cat='all', cur=null, state='bought';
 const $=x=>document.getElementById(x), P=id=>db.products.find(p=>p.id===id), save=()=>localStorage.setItem(KEY,JSON.stringify(db)), money=x=>(+x||0).toLocaleString('pl-PL',{style:'currency',currency:'PLN'});
@@ -103,11 +170,57 @@ document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go)
 function go(id){document.querySelectorAll('.page,.nav').forEach(x=>x.classList.remove('active','on'));$(id).classList.add('active');document.querySelector(`[data-go="${id}"]`).classList.add('on');renderAll()}
 function shift(n){let d=new Date($('date').value+'T12:00');d.setDate(d.getDate()+n);$('date').value=d.toLocaleDateString('en-CA');renderAll()}
 function last(pid,before=$('date').value){let a=[];Object.entries(db.lists).forEach(([d,l])=>d<before&&l.forEach(x=>{if(x.pid==pid&&x.state=='bought'&&+x.qty&&+x.amount)a.push({d,r:+x.amount/+x.qty})}));return a.sort((a,b)=>b.d.localeCompare(a.d))[0]}
+function setBudget(){let d=$('date').value,old=db.budgets[d]||'';let v=prompt('Budżet na tę listę (zł):',old);if(v===null)return;v=String(v).replace(',','.').trim();if(v===''||+v<0){delete db.budgets[d]}else if(!isNaN(+v)){db.budgets[d]=+v}save();renderToday()}
+function renderBudget(){
+ let l=L(),spent=l.reduce((s,x)=>s+(x.state==='bought'?+x.amount||0:0),0),limit=+db.budgets[$('date').value]||0,left=limit-spent;
+ $('budgetSpent').textContent=money(spent);$('budgetLimit').textContent=limit?money(limit):'ustaw budżet';
+ $('budgetLeft').textContent=limit?(left>=0?`Zostało ${money(left)}`:`Przekroczono ${money(-left)}`):'';
+ $('budgetLeft').className=limit&&left<0?'priceUp':'';
+ let pct=limit?Math.min(100,spent/limit*100):0;$('budgetFill').style.width=pct+'%';$('budgetFill').className=limit&&spent>limit?'over':'';
+ $('budgetInfo').textContent=limit?`Wykorzystano ${Math.round(spent/limit*100)}% budżetu`:'Ustaw limit wydatków dla tej listy.';
+}
 function renderToday(){let l=L(), q=$('qToday').value.toLowerCase(), C={all:l.length,todo:l.filter(x=>x.state=='todo').length,bought:l.filter(x=>x.state=='bought').length,missed:l.filter(x=>x.state=='missed').length};$('status').innerHTML=[['all','Wszystkie'],['todo','Do kupienia'],['bought','Kupione']].map(([k,t])=>`<button class="${filt==k?'on':''}" onclick="filt='${k}';renderToday()">${t}<span class=badge>${C[k]}</span></button>`).join('');
 $('todayList').innerHTML=l.filter(x=>(filt=='all'||x.state==filt)&&P(x.pid).n.toLowerCase().includes(q)).map(x=>{let p=P(x.pid),r=+x.qty&&+x.amount?+x.amount/+x.qty:0,st=x.state=='missed'?'<span class="pill red">Nie kupiono</span>':x.state=='todo'?'<span class="pill blue">Do kupienia</span>':'';return `<div class=product onclick="openEdit('${x.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${x.qty||p.q||'—'} ${p.u}</div></div><div>${r?`<div class=unitprice>${money(r)}/${p.u}</div><div class=total>${money(x.amount)} / ${x.qty} ${p.u}</div>`:st}</div><div class="check ${x.state=='bought'?'y':''}">${x.state=='bought'?'✓':''}</div></div>`}).join('');
-let b=l.filter(x=>x.state=='bought'),m=l.filter(x=>x.state=='missed');$('summary').innerHTML=`<div><b>${b.length}</b>Kupione</div><div><b>${l.length-b.length-m.length}</b>Do kupienia</div><div class=r><b>${m.length}</b>Nie kupiono<br><b>${money(b.reduce((s,x)=>s+(+x.amount||0),0))}</b></div>`}
-function renderLists(){let d=new Date($('date').value+'T12:00'),y=d.getFullYear(),m=d.getMonth(),first=new Date(y,m,1),days=new Date(y,m+1,0).getDate(),off=(first.getDay()+6)%7;$('month').textContent=d.toLocaleDateString('pl-PL',{month:'long',year:'numeric'});let h=['Pon','Wt','Śr','Cz','Pt','Sob','Nd'].map(x=>`<b>${x}</b>`).join('');for(let i=0;i<off;i++)h+='<span></span>';for(let n=1;n<=days;n++){let ds=`${y}-${String(m+1).padStart(2,'0')}-${String(n).padStart(2,'0')}`,has=db.lists[ds]?.length;h+=`<span class="${ds==$('date').value?'sel ':''}${has?'dot':''}" onclick="$('date').value='${ds}';renderAll()">${n}</span>`}$('calendar').innerHTML=h;let l=L(),b=l.filter(x=>x.state=='bought'),mi=l.filter(x=>x.state=='missed');$('listCard').innerHTML=`<b style="font-size:13px">Lista na ${$('date').value.split('-').reverse().join('.')}</b><div class=kpis><div class=kpi><b>${l.length}</b>Pozycji</div><div class="kpi green"><b>${b.length}</b>Kupione</div><div class="kpi blue"><b>${l.length-b.length-mi.length}</b>Do kupienia</div><div class="kpi red"><b>${mi.length}</b>Nie kupiono</div></div><div class=card><div class=action onclick="go('today')">▣ <span class=grow>Otwórz listę</span>›</div><div class=action onclick="copyPrev()">⧉ <span class=grow>Kopiuj z poprzedniej listy</span>›</div><div class=action onclick="clearList()">♲ <span class=grow>Wyczyść listę</span>›</div></div>`;
-$('recent').innerHTML=Object.keys(db.lists).filter(d=>db.lists[d].length).sort().reverse().slice(0,6).map(d=>`<div class=recent onclick="$('date').value='${d}';go('today')"><b>▦ ${d}</b><span>${db.lists[d].length} pozycji</span><b>${money(db.lists[d].reduce((s,x)=>s+(x.state=='bought'?+x.amount||0:0),0))}</b></div>`).join('')}
+let b=l.filter(x=>x.state=='bought'),m=l.filter(x=>x.state=='missed');$('summary').innerHTML=`<div><b>${b.length}</b>Kupione</div><div><b>${l.length-b.length-m.length}</b>Do kupienia</div><div class=r><b>${m.length}</b>Nie kupiono<br><b>${money(b.reduce((s,x)=>s+(+x.amount||0),0))}</b></div>`;renderBudget()}
+function productUsage(pid){
+ let rows=[];Object.entries(db.lists).forEach(([d,l])=>l.forEach(x=>{if(x.pid===pid&&x.state==='bought')rows.push({d,x})}));
+ rows.sort((a,b)=>b.d.localeCompare(a.d));let qs=rows.map(r=>+r.x.qty).filter(x=>x>0);
+ return {count:rows.length,last:rows[0],typical:qs.length?+(qs.reduce((a,b)=>a+b,0)/qs.length).toFixed(2):(+P(pid)?.q||'')};
+}
+function renderSpendSummary(){
+ let d=$('date').value,l=L(),spent=l.reduce((s,x)=>s+(x.state==='bought'?+x.amount||0:0),0);
+ let dates=Object.keys(db.lists).filter(x=>x<d).sort().reverse(),prev=dates.find(x=>db.lists[x]?.some(i=>i.state==='bought'));
+ let prevSpent=prev?db.lists[prev].reduce((s,x)=>s+(x.state==='bought'?+x.amount||0:0),0):0,diff=prev?spent-prevSpent:null;
+ let cat={};l.forEach(x=>{if(x.state!=='bought')return;let p=P(x.pid);if(!p)return;cat[p.c]=(cat[p.c]||0)+(+x.amount||0)});
+ $('spendSummary').innerHTML=`<div class=spendBox>Dzisiaj<b>${money(spent)}</b></div><div class=spendBox>Poprzednia lista<b>${prev?money(prevSpent):'—'}</b></div><div class=spendBox>Różnica<b class="${diff>0?'priceUp':diff<0?'priceDown':''}">${diff===null?'—':`${diff>=0?'+':''}${money(diff)}`}</b></div>`;
+ $('categorySpend').innerHTML=Object.entries(cat).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<div class=catSpendRow><span>${c}</span><b>${money(v)} <small style="color:var(--mut)">(${spent?Math.round(v/spent*100):0}%)</small></b></div>`).join('')||'<div class="sub" style="margin-top:8px">Brak zarejestrowanych wydatków.</div>';
+}
+function renderLists(){let d=new Date($('date').value+'T12:00'),y=d.getFullYear(),m=d.getMonth(),first=new Date(y,m,1),days=new Date(y,m+1,0).getDate(),off=(first.getDay()+6)%7;$('month').textContent=d.toLocaleDateString('pl-PL',{month:'long',year:'numeric'});let h=['Pon','Wt','Śr','Cz','Pt','Sob','Nd'].map(x=>`<b>${x}</b>`).join('');for(let i=0;i<off;i++)h+='<span></span>';for(let n=1;n<=days;n++){let ds=`${y}-${String(m+1).padStart(2,'0')}-${String(n).padStart(2,'0')}`,has=db.lists[ds]?.length;h+=`<span class="${ds==$('date').value?'sel ':''}${has?'dot':''}" onclick="$('date').value='${ds}';renderAll()">${n}</span>`}$('calendar').innerHTML=h;let l=L(),b=l.filter(x=>x.state=='bought'),mi=l.filter(x=>x.state=='missed');$('listCard').innerHTML=`<b style="font-size:13px">Lista na ${$('date').value.split('-').reverse().join('.')}</b><div class=kpis><div class=kpi><b>${l.length}</b>Pozycji</div><div class="kpi green"><b>${b.length}</b>Kupione</div><div class="kpi blue"><b>${l.length-b.length-mi.length}</b>Do kupienia</div><div class="kpi red"><b>${mi.length}</b>Nie kupiono</div></div><div class=card><div class=action onclick="go('today')"><span class=grow>Otwórz listę</span>›</div><div class=action onclick="copyPrev()"><span class=grow>Kopiuj z poprzedniej listy</span>›</div><div class=action onclick="clearList()"><span class=grow>Wyczyść listę</span>›</div></div>`;
+$('recent').innerHTML=Object.keys(db.lists).filter(d=>db.lists[d].length).sort().reverse().slice(0,6).map(d=>`<div class=recent onclick="$('date').value='${d}';go('today')"><b>${d}</b><span>${db.lists[d].length} pozycji</span><b>${money(db.lists[d].reduce((s,x)=>s+(x.state=='bought'?+x.amount||0:0),0))}</b></div>`).join('');renderSpendSummary()}
+function finishShopping(){let l=L(),todo=l.filter(x=>x.state==='todo');if(todo.length&&confirm(`Masz ${todo.length} pozycji do kupienia. Przenieść je na jutro?`)){let d=new Date($('date').value+'T12:00');d.setDate(d.getDate()+1);let nd=d.toLocaleDateString('en-CA');db.lists[nd]=(db.lists[nd]||[]).concat(todo.map(x=>({...x,id:'i'+Date.now()+Math.random(),state:'todo',qty:'',amount:''})));}save();renderAll();alert('Zakupy zapisane.')}
+function mergeIntoCurrent(items){
+ let l=L(),used=new Set(l.map(x=>x.pid));
+ items.forEach(it=>{if(!P(it.pid)||used.has(it.pid))return;l.push({id:'i'+Date.now()+Math.random(),pid:it.pid,state:'todo',qty:it.qty||P(it.pid).q||'',amount:''});used.add(it.pid)});
+ save();renderAll()
+}
+function createTypicalList(){
+ let ranked=db.products.map(p=>({pid:p.id,...productUsage(p.id)})).filter(x=>x.count>0).sort((a,b)=>b.count-a.count).slice(0,15);
+ if(!ranked.length){alert('Najpierw zapisz kilka zakupów. Na ich podstawie utworzę typową listę.');return}
+ mergeIntoCurrent(ranked.map(x=>({pid:x.pid,qty:x.typical})));go('today')
+}
+function createFromLastBought(){
+ let dates=Object.keys(db.lists).filter(d=>d<$('date').value&&db.lists[d]?.some(x=>x.state==='bought')).sort().reverse();
+ if(!dates[0]){alert('Brak wcześniejszej listy z zakupami.');return}
+ mergeIntoCurrent(db.lists[dates[0]].filter(x=>x.state==='bought').map(x=>({pid:x.pid,qty:x.qty||P(x.pid)?.q||''})));go('today')
+}
+function saveTemplate(){
+ let l=L();if(!l.length){alert('Obecna lista jest pusta.');return}
+ let n=prompt('Nazwa szablonu, np. Standard lub Weekend:');if(!n)return;n=n.trim();if(!n)return;
+ db.templates.push({id:'t'+Date.now(),name:n,items:l.map(x=>({pid:x.pid,qty:x.qty||P(x.pid)?.q||''}))});save();renderTemplates()
+}
+function useTemplate(id){let t=db.templates.find(x=>x.id===id);if(!t)return;mergeIntoCurrent(t.items);go('today')}
+function deleteTemplate(id){let t=db.templates.find(x=>x.id===id);if(!t)return;if(!confirm(`Usunąć szablon „${t.name}”?`))return;db.templates=db.templates.filter(x=>x.id!==id);save();renderTemplates()}
+function renderTemplates(){let el=$('templates');if(!el)return;el.innerHTML=db.templates.map(t=>`<div class=templateRow><span><b>${t.name}</b><small class=sub style="display:block">${t.items.length} pozycji</small></span><button class=miniBtn onclick="useTemplate('${t.id}')">Użyj</button><button class="miniBtn red" onclick="deleteTemplate('${t.id}')">Usuń</button></div>`).join('')}
 function copyPrev(){let dates=Object.keys(db.lists).filter(d=>d<$('date').value&&db.lists[d].length).sort().reverse();if(!dates[0])return;db.lists[$('date').value]=db.lists[dates[0]].map(x=>({...x,id:'i'+Date.now()+Math.random(),state:'todo',qty:'',amount:''}));save();renderAll()}function clearList(){db.lists[$('date').value]=[];save();renderAll()}
 function renderCategoryManager(){
 $('categoryManager').innerHTML=db.cats.map(c=>`<div class="catrow"><span>${c}</span><button class="catdel" onclick="deleteCategory('${c.replace(/'/g,"\\'")}')">Usuń</button></div>`).join('')
@@ -119,23 +232,94 @@ function deleteCategory(c){
  if(!confirm(`Usunąć kategorię „${c}”?`))return;
  db.cats=db.cats.filter(x=>x!==c); if(cat===c)cat='all'; save();renderAll()
 }
-function renderProducts(){renderCategoryManager();let q=$('qProd').value.toLowerCase();$('cats').innerHTML=[['all','Wszystkie'],...db.cats.map(c=>[c,c])].map(([k,t])=>`<button class="cat ${cat==k?'on':''}" onclick="cat='${k}';renderProducts()"><b>${k==='all'?'•':t.slice(0,1).toUpperCase()}</b>${t}</button>`).join('');$('catalog').innerHTML=db.products.filter(p=>(cat=='all'||p.c==cat)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c}</div></div><span class=unit>${p.u}</span><button class=star onclick="toggleFav('${p.id}')">${p.f?'★':'☆'}</button></div>`).join('');fillHist()}
-function toggleFav(id){P(id).f=!P(id).f;save();renderProducts()} function openProduct(){$('pc').innerHTML=db.cats.map(c=>`<option>${c}</option>`).join('');$('prodSheet').classList.add('open')}function saveProduct(){let n=$('pn').value.trim();if(!n)return;db.products.push({id:'p'+Date.now(),n,c:$('pc').value,u:$('pu').value,q:$('pq').value,f:0});save();$('prodSheet').classList.remove('open');renderAll()}
-function openAdd(){$('qAdd').value='';renderAdd();$('addSheet').classList.add('open')}function renderAdd(){let used=new Set(L().map(x=>x.pid)),q=$('qAdd').value.toLowerCase();$('addRows').innerHTML=db.products.filter(p=>!used.has(p.id)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product onclick="addOne('${p.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c} • ${p.q||'—'} ${p.u}</div></div><b style="color:var(--g)">＋</b><span></span></div>`).join('')}function addOne(pid){L().push({id:'i'+Date.now()+Math.random(),pid,state:'todo',qty:'',amount:''});save();renderAdd();renderToday()}
+function renderProducts(){renderCategoryManager();let q=$('qProd').value.toLowerCase();$('cats').innerHTML=[['all','Wszystkie'],...db.cats.map(c=>[c,c])].map(([k,t])=>`<button class="cat ${cat==k?'on':''}" onclick="cat='${k}';renderProducts()"><b>${k==='all'?'•':t.slice(0,1).toUpperCase()}</b>${t}</button>`).join('');$('catalog').innerHTML=db.products.filter(p=>(cat=='all'||p.c==cat)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product onclick="editProduct('${p.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c}</div></div><span class=unit>${p.u}</span><button class=star onclick="event.stopPropagation();toggleFav('${p.id}')">${p.f?'★':'☆'}</button></div>`).join('');fillHist()}
+function toggleFav(id){P(id).f=!P(id).f;save();renderProducts()}
+let editPid=null;
+function editProduct(id){editPid=id;let p=P(id);$('epn').value=p.n;$('epc').innerHTML=db.cats.map(c=>`<option ${c===p.c?'selected':''}>${c}</option>`).join('');$('epu').innerHTML=db.units.map(u=>`<option ${u===p.u?'selected':''}>${u}</option>`).join('');$('epq').value=p.q||'';$('editProductSheet').classList.add('open')}
+function saveProductEdit(){let p=P(editPid),n=$('epn').value.trim();if(!p||!n)return;p.n=n;p.c=$('epc').value;p.u=$('epu').value;p.q=$('epq').value;save();$('editProductSheet').classList.remove('open');renderAll()}
+function deleteProduct(){let p=P(editPid);if(!p)return;if(Object.values(db.lists).some(l=>l.some(x=>x.pid===editPid))){alert('Produkt występuje na zapisanych listach. Usuń go najpierw z list, aby nie utracić historii.');return}if(!confirm(`Usunąć produkt „${p.n}”?`))return;db.products=db.products.filter(x=>x.id!==editPid);save();$('editProductSheet').classList.remove('open');renderAll()}
+function renderUnits(){let el=$('unitManager');if(!el)return;el.innerHTML=db.units.map(u=>`<div class="catrow"><span>${u}</span><button class="catdel" onclick="deleteUnit('${u.replace(/'/g,"\\'")}')">Usuń</button></div>`).join('')}
+function addUnit(){let u=prompt('Nazwa jednostki, np. worek:');if(!u)return;u=u.trim();if(!u||db.units.includes(u))return;db.units.push(u);save();renderAll()}
+function deleteUnit(u){if(db.products.some(p=>p.u===u)){alert('Ta jednostka jest używana przez produkty. Najpierw zmień jednostkę tych produktów.');return}if(!confirm(`Usunąć jednostkę „${u}”?`))return;db.units=db.units.filter(x=>x!==u);save();renderAll()}
+function openProduct(){$('pc').innerHTML=db.cats.map(c=>`<option>${c}</option>`).join('');$('pu').innerHTML=db.units.map(u=>`<option>${u}</option>`).join('');$('prodSheet').classList.add('open')}function saveProduct(){let n=$('pn').value.trim();if(!n)return;db.products.push({id:'p'+Date.now(),n,c:$('pc').value,u:$('pu').value,q:$('pq').value,f:0});save();$('prodSheet').classList.remove('open');renderAll()}
+function openAdd(){$('qAdd').value='';renderAdd();$('addSheet').classList.add('open')}function renderAdd(){let used=new Set(L().map(x=>x.pid)),q=$('qAdd').value.toLowerCase();
+ let sug=db.products.map(p=>({p,u:productUsage(p.id)})).filter(o=>!used.has(o.p.id)&&o.u.count>0).sort((a,b)=>b.u.count-a.u.count).slice(0,6);
+ $('smartSuggestions').innerHTML=sug.length?`<div class=suggestTitle>Często kupowane</div><div class=suggestChips>${sug.map(o=>`<button class=suggestChip onclick="addOne('${o.p.id}')">${o.p.n} · ${o.u.typical||o.p.q||'—'} ${o.p.u}</button>`).join('')}</div>`:'';
+ $('addRows').innerHTML=db.products.filter(p=>!used.has(p.id)&&p.n.toLowerCase().includes(q)).map(p=>`<div class=product onclick="addOne('${p.id}')"><div class=pic>${productMark(p.n)}</div><div><div class=name>${p.n}</div><div class=sub>${p.c} • ${p.q||'—'} ${p.u}</div></div><b style="color:var(--g)">＋</b><span></span></div>`).join('')}function addOne(pid){let u=productUsage(pid);L().push({id:'i'+Date.now()+Math.random(),pid,state:'todo',qty:u.typical||P(pid).q||'',amount:''});save();renderAdd();renderToday()}
 function openEdit(id){cur=id;let x=L().find(a=>a.id==id),p=P(x.pid);state=x.state;$('editName').textContent=p.n;$('editHero').textContent=productMark(p.n);$('editMeta').textContent=`Kategoria: ${p.c}   •   Domyślna jednostka: ${p.u}`;$('qty').value=x.qty||p.q||'';$('amount').value=x.amount||'';let z=last(p.id);$('compare').textContent=z?`Ostatnia cena: ${money(z.r)}/${p.u} (${z.d})`:'';$('delta').textContent='';calc();$('editSheet').classList.add('open')}function closeSheet(){$('editSheet').classList.remove('open')}function setState(s){state=s}
 function calc(){let x=L().find(a=>a.id==cur),p=x&&P(x.pid),r=+$('qty').value&&+$('amount').value?+$('amount').value/+$('qty').value:0;$('calc').textContent=r?`${money(r)}/${p.u}`:'—';let z=p&&last(p.id);if(z&&r){let d=r-z.r;$('delta').textContent=`${d>=0?'+':''}${money(d)} (${d/z.r*100>=0?'+':''}${(d/z.r*100).toFixed(0)}%)`}}
 function saveEdit(){let x=L().find(a=>a.id==cur);Object.assign(x,{state,qty:$('qty').value,amount:$('amount').value});save();closeSheet();renderAll()}function removeItem(){db.lists[$('date').value]=L().filter(x=>x.id!=cur);save();closeSheet();renderAll()}
+let histDays=30;
+function setHistDays(n){histDays=n;document.querySelectorAll('#histPeriods button').forEach(b=>b.classList.toggle('on',+b.dataset.days===n));renderHistory()}
 function fillHist(){let old=$('histProd').value;$('histProd').innerHTML=db.products.map(p=>`<option value="${p.id}">${p.n}</option>`).join('');if(old)$('histProd').value=old}
-function renderHistory(){let pid=$('histProd').value||db.products[0].id,p=P(pid);$('histPic').textContent=productMark(p.n);let a=[];Object.entries(db.lists).forEach(([d,l])=>l.forEach(x=>{if(x.pid==pid&&x.state=='bought'&&+x.qty&&+x.amount)a.push({d,r:+x.amount/+x.qty,x})}));a.sort((x,y)=>x.d.localeCompare(y.d));let vals=a.map(x=>x.r),lo=vals.length?Math.min(...vals):0,hi=vals.length?Math.max(...vals):1,pts=a.map((x,i)=>`${18+i*(270/Math.max(1,a.length-1))},${145-(x.r-lo)/Math.max(1,hi-lo)*105}`).join(' ');$('chart').innerHTML=a.length?`<svg viewBox="0 0 305 165"><g stroke="#e6ebe7" stroke-width="1"><line x1="18" y1="40" x2="292" y2="40"/><line x1="18" y1="75" x2="292" y2="75"/><line x1="18" y1="110" x2="292" y2="110"/><line x1="18" y1="145" x2="292" y2="145"/></g><polyline points="${pts}" fill="none" stroke="#078a49" stroke-width="2.5"/><g fill="#078a49">${pts.split(' ').map(q=>{let [x,y]=q.split(',');return `<circle cx="${x}" cy="${y}" r="3"/>`}).join('')}</g></svg>`:'<div style="text-align:center;padding-top:70px;color:#68736c;font-size:11px">Brak danych cenowych</div>';let lastv=vals.at(-1)||0,avg=vals.length?vals.reduce((s,x)=>s+x,0)/vals.length:0;$('stats').innerHTML=`<div class=stat>Ostatnia cena<b>${money(lastv)}/${p.u}</b></div><div class=stat>Średnia 30 dni<b>${money(avg)}/${p.u}</b></div><div class=stat>Najniższa<b>${money(vals.length?Math.min(...vals):0)}/${p.u}</b></div><div class=stat>Najwyższa<b>${money(vals.length?Math.max(...vals):0)}/${p.u}</b></div>`;$('histRows').innerHTML=a.slice().reverse().map(r=>`<div class=historyrow><span class=greenDot></span><b>${r.d}</b><span>${r.x.qty} ${p.u}</span><span>${money(r.r)}/${p.u}</span><span>${money(r.x.amount)}</span></div>`).join('')}
+function renderHistory(){
+ let pid=$('histProd').value||db.products[0]?.id,p=P(pid); if(!p)return;
+ $('histPic').textContent=productMark(p.n);
+ let all=[];
+ Object.entries(db.lists).forEach(([d,l])=>l.forEach(x=>{
+   if(x.pid==pid&&x.state=='bought'&&+x.qty&&+x.amount)all.push({d,r:+x.amount/+x.qty,x})
+ }));
+ all.sort((a,b)=>a.d.localeCompare(b.d));
+ let cutoff=new Date(); cutoff.setHours(0,0,0,0); cutoff.setDate(cutoff.getDate()-histDays);
+ let a=all.filter(x=>new Date(x.d+'T12:00')>=cutoff);
+ let vals=a.map(x=>x.r), last=a.at(-1), prev=a.at(-2);
+ let delta=last&&prev?last.r-prev.r:null, pct=delta!==null&&prev.r?delta/prev.r*100:null;
+ $('priceDelta').textContent=delta===null?'Brak poprzedniej ceny':`${delta>=0?'+':''}${money(delta)}/${p.u}`;
+ $('priceDeltaPct').textContent=pct===null?'—':`${pct>=0?'+':''}${pct.toFixed(1)}%`;
+ $('priceDelta').className=delta>0?'priceUp':delta<0?'priceDown':'';
+ $('priceDeltaPct').className=delta>0?'priceUp':delta<0?'priceDown':'';
+
+ if(!a.length){$('chart').innerHTML='<div class="histEmpty">Brak zakupów w wybranym okresie</div>'}
+ else{
+   let lo=Math.min(...vals),hi=Math.max(...vals),pad=Math.max((hi-lo)*.15,.5),min=lo-pad,max=hi+pad;
+   let W=305,H=165,L=30,R=8,T=15,B=25, iw=W-L-R, ih=H-T-B;
+   let pts=a.map((x,i)=>({x:L+i*(iw/Math.max(1,a.length-1)),y:T+(max-x.r)/(max-min)*ih,d:x.d,r:x.r}));
+   let grid=[0,.25,.5,.75,1].map(t=>{let y=T+t*ih,v=max-t*(max-min);return `<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#e6ebe7"/><text x="2" y="${y+3}" class="chartLabels">${v.toFixed(1)}</text>`}).join('');
+   let line=pts.map(q=>`${q.x},${q.y}`).join(' ');
+   let dots=pts.map(q=>`<circle cx="${q.x}" cy="${q.y}" r="3.2" fill="#078a49"><title>${q.d}: ${q.r.toFixed(2)} zł/${p.u}</title></circle>`).join('');
+   let labels=pts.filter((q,i)=>i===0||i===pts.length-1||(pts.length<7)).map(q=>`<text x="${q.x}" y="${H-5}" text-anchor="middle" class="chartLabels">${q.d.slice(5).split('-').reverse().join('.')}</text>`).join('');
+   $('chart').innerHTML=`<svg viewBox="0 0 ${W} ${H}">${grid}<polyline points="${line}" fill="none" stroke="#078a49" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>${dots}${labels}</svg>`;
+ }
+ let lastv=vals.at(-1)||0,avg=vals.length?vals.reduce((s,x)=>s+x,0)/vals.length:0;
+ $('stats').innerHTML=`<div class=stat>Ostatnia cena<b>${money(lastv)}/${p.u}</b></div><div class=stat>Średnia<b>${money(avg)}/${p.u}</b></div><div class=stat>Najniższa<b>${money(vals.length?Math.min(...vals):0)}/${p.u}</b></div><div class=stat>Najwyższa<b>${money(vals.length?Math.max(...vals):0)}/${p.u}</b></div>`;
+ $('histRows').innerHTML=all.slice().reverse().slice(0,12).map((r,i)=>{
+   let prev=all[all.indexOf(r)-1],dd=prev?r.r-prev.r:null;
+   return `<div class=historyrow><span class=greenDot></span><b>${r.d}</b><span>${r.x.qty} ${p.u}</span><span>${money(r.r)}/${p.u}${dd!==null?`<small style="display:block" class="${dd>0?'priceUp':dd<0?'priceDown':''}">${dd>=0?'+':''}${dd.toFixed(2)}</small>`:''}</span><span>${money(r.x.amount)}</span></div>`
+ }).join('');
+}
+function reportData(){
+ let days=+$('reportRange')?.value||30,cut=new Date();cut.setHours(0,0,0,0);cut.setDate(cut.getDate()-days);
+ let rows=[];
+ Object.entries(db.lists).forEach(([d,l])=>{if(new Date(d+'T12:00')<cut)return;l.forEach(x=>{if(x.state!=='bought'||!+x.amount)return;let p=P(x.pid);if(p)rows.push({d,p,qty:+x.qty||0,amount:+x.amount,unit:+x.qty?+x.amount/+x.qty:0})})});
+ return rows.sort((a,b)=>a.d.localeCompare(b.d))
+}
+function renderReports(){
+ let el=$('reportKpis');if(!el)return;let rows=reportData(),total=rows.reduce((s,r)=>s+r.amount,0),qty=rows.reduce((s,r)=>s+r.qty,0),days=[...new Set(rows.map(r=>r.d))],avg=days.length?total/days.length:0;
+ el.innerHTML=`<div class=reportKpi>Łączne wydatki<b>${money(total)}</b></div><div class=reportKpi>Zakupione pozycje<b>${rows.length}</b></div><div class=reportKpi>Dni zakupowe<b>${days.length}</b></div><div class=reportKpi>Średnio / lista<b>${money(avg)}</b></div>`;
+ let byDay={};rows.forEach(r=>byDay[r.d]=(byDay[r.d]||0)+r.amount);let vals=Object.entries(byDay),mx=Math.max(1,...vals.map(x=>x[1]));
+ if(!vals.length)$('reportChart').innerHTML='<div class=histEmpty>Brak danych w wybranym okresie</div>';
+ else{let W=305,H=125,pad=18,bw=Math.max(3,(W-pad*2)/vals.length*.55);$('reportChart').innerHTML=`<svg viewBox="0 0 ${W} ${H}">${vals.map(([d,v],i)=>{let x=pad+i*((W-pad*2)/Math.max(1,vals.length)),h=v/mx*85;return `<rect x="${x}" y="${100-h}" width="${bw}" height="${h}" rx="2" fill="#078a49"><title>${d}: ${v.toFixed(2)} zł</title></rect>`}).join('')}<line x1="10" y1="100" x2="295" y2="100" stroke="#dfe5e1"/></svg>`}
+ let cats={};rows.forEach(r=>cats[r.p.c]=(cats[r.p.c]||0)+r.amount);let cm=Math.max(1,...Object.values(cats));$('reportCats').innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<div class=reportBar><span>${c}</span><div class=reportBarTrack><i style="width:${v/cm*100}%"></i></div><b>${money(v)}</b></div>`).join('')||'<div class=sub>Brak danych.</div>';
+ let prod={};rows.forEach(r=>{let x=prod[r.p.id]||(prod[r.p.id]={p:r.p,count:0,amount:0,qty:0});x.count++;x.amount+=r.amount;x.qty+=r.qty});$('reportProducts').innerHTML=Object.values(prod).sort((a,b)=>b.count-a.count).slice(0,10).map(x=>`<div class=reportProduct><b>${x.p.n}</b><span>${x.count}×</span><span>${money(x.amount)}</span></div>`).join('')||'<div class=sub>Brak danych.</div>'
+}
+function exportCSV(){
+ let rows=reportData(),lines=[['Data','Produkt','Kategoria','Ilość','Jednostka','Kwota','Cena jednostkowa']];
+ rows.forEach(r=>lines.push([r.d,r.p.n,r.p.c,String(r.qty).replace('.',','),r.p.u,r.amount.toFixed(2).replace('.',','),r.unit.toFixed(2).replace('.',',')]));
+ let csv='\ufeff'+lines.map(a=>a.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(';')).join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download=`gielda-raport-${new Date().toLocaleDateString('en-CA')}.csv`;a.click()
+}
+function printReport(){renderReports();window.print()}
 function exportData(){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(db,null,2)],{type:'application/json'}));a.download='gielda-backup.json';a.click()}function importData(i){let f=i.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{db=JSON.parse(r.result);save();renderAll()}catch(e){alert('Nieprawidłowy plik')}};r.readAsText(f)}
 function renderAll(){
  try{renderToday()}catch(e){console.error('today',e)}
  try{renderLists()}catch(e){console.error('lists',e)}
  try{renderProducts()}catch(e){console.error('products',e)}
  try{fillHist();renderHistory()}catch(e){console.error('history',e)}
+ try{renderUnits()}catch(e){console.error('units',e)}
+ try{renderTemplates()}catch(e){console.error('templates',e)}
+ try{renderReports()}catch(e){console.error('reports',e)}
+ document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=I(el.dataset.icon)})
  try{save()}catch(e){console.error('save',e)}
 }
 renderAll();
-if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{})}
-if('caches' in window){caches.keys().then(ks=>Promise.all(ks.map(k=>caches.delete(k)))).catch(()=>{})}
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.error));
 </script></body></html>
